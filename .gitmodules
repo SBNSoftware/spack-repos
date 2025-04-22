@@ -1,0 +1,12 @@
+[submodule "artdaq-spack"]
+	path = artdaq-spack
+	url = git@github.com:SBNSoftware/artdaq-spack.git
+[submodule "fnal_art"]
+	path = fnal_art
+	url = git@github.com:SBNSoftware/fnal_art.git
+[submodule "sbn-spack"]
+	path = sbn-spack
+	url = git@github.com:SBNSoftware/sbn-spack.git
+[submodule "scd_recipes"]
+	path = scd_recipes
+	url = https://github.com/marcmengel/scd_recipes.git
