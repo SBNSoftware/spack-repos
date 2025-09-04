@@ -1,0 +1,1883 @@
+Only in old_fnal_art/: .git
+Only in old_fnal_art/: .gitignore
+diff -r old_fnal_art/packages/art/package.py /daq/software/ALCF_SBN_spack_recipes/fnal_art/packages/art/package.py
+7a8
+> from spack import *
+Binary files old_fnal_art/packages/art/__pycache__/package.cpython-36.pyc and /daq/software/ALCF_SBN_spack_recipes/fnal_art/packages/art/__pycache__/package.cpython-36.pyc differ
+Binary files old_fnal_art/packages/art/__pycache__/package.cpython-39.pyc and /daq/software/ALCF_SBN_spack_recipes/fnal_art/packages/art/__pycache__/package.cpython-39.pyc differ
+diff -r old_fnal_art/packages/art-cpp-db-interfaces/package.py /daq/software/ALCF_SBN_spack_recipes/fnal_art/packages/art-cpp-db-interfaces/package.py
+5a6
+> from spack import *
+Only in old_fnal_art/packages/art-cpp-db-interfaces/__pycache__: package.cpython-36.pyc
+Binary files old_fnal_art/packages/art-cpp-db-interfaces/__pycache__/package.cpython-39.pyc and /daq/software/ALCF_SBN_spack_recipes/fnal_art/packages/art-cpp-db-interfaces/__pycache__/package.cpython-39.pyc differ
+diff -r old_fnal_art/packages/artdaq-runcontrol-gui/package.py /daq/software/ALCF_SBN_spack_recipes/fnal_art/packages/artdaq-runcontrol-gui/package.py
+7d6
+< import spack.util.web
+Binary files old_fnal_art/packages/artdaq-runcontrol-gui/__pycache__/package.cpython-36.pyc and /daq/software/ALCF_SBN_spack_recipes/fnal_art/packages/artdaq-runcontrol-gui/__pycache__/package.cpython-36.pyc differ
+Binary files old_fnal_art/packages/artdaq-runcontrol-gui/__pycache__/package.cpython-39.pyc and /daq/software/ALCF_SBN_spack_recipes/fnal_art/packages/artdaq-runcontrol-gui/__pycache__/package.cpython-39.pyc differ
+diff -r old_fnal_art/packages/artg4/package.py /daq/software/ALCF_SBN_spack_recipes/fnal_art/packages/artg4/package.py
+5a6
+> from spack import *
+Only in old_fnal_art/packages/artg4/__pycache__: package.cpython-36.pyc
+Binary files old_fnal_art/packages/artg4/__pycache__/package.cpython-39.pyc and /daq/software/ALCF_SBN_spack_recipes/fnal_art/packages/artg4/__pycache__/package.cpython-39.pyc differ
+Only in old_fnal_art/packages/artg4tk: 11.00.01.patch
+Only in /daq/software/ALCF_SBN_spack_recipes/fnal_art/packages/artg4tk: override.patch
+diff -r old_fnal_art/packages/artg4tk/package.py /daq/software/ALCF_SBN_spack_recipes/fnal_art/packages/artg4tk/package.py
+5a6
+> from spack import *
+16c17,19
+<     # version('10.04.00', sha256='44a1e12425ff2ebe90f7482ad2b10cbde873477815f81707677eb2ad14d3cef4')
+---
+>     version('12.00.03', sha256='af0f43f441cb901a914f7f1f50ad79392a295f56e3126b49d584809e2c8e735c')
+>     version('12.00.03', tag="v12_00_03", get_full_repo=True)
+>     version('10.04.00', sha256='44a1e12425ff2ebe90f7482ad2b10cbde873477815f81707677eb2ad14d3cef4')
+47c50
+<     patch("11.00.01.patch", when="@11.00.01")
+---
+>     patch("override.patch", when="@11.00.01")
+63,64c66,67
+<         url = "https://cdcvs.fnal.gov/cgi-bin/git_archive.cgi/cvs/projects/{0}.v{1}.tbz2"
+<         return url.format(self.name, version.underscored)
+---
+>         url = "https://github.com/art-framework-suite/art-g4tk/archive/v{0}.tar.gz"
+>         return url.format(version.underscored)
+Only in old_fnal_art/packages/artg4tk/__pycache__: package.cpython-36.pyc
+Binary files old_fnal_art/packages/artg4tk/__pycache__/package.cpython-39.pyc and /daq/software/ALCF_SBN_spack_recipes/fnal_art/packages/artg4tk/__pycache__/package.cpython-39.pyc differ
+Binary files old_fnal_art/packages/art-root-io/__pycache__/package.cpython-36.pyc and /daq/software/ALCF_SBN_spack_recipes/fnal_art/packages/art-root-io/__pycache__/package.cpython-36.pyc differ
+Binary files old_fnal_art/packages/art-root-io/__pycache__/package.cpython-39.pyc and /daq/software/ALCF_SBN_spack_recipes/fnal_art/packages/art-root-io/__pycache__/package.cpython-39.pyc differ
+diff -r old_fnal_art/packages/art-suite/package.py /daq/software/ALCF_SBN_spack_recipes/fnal_art/packages/art-suite/package.py
+10d9
+< 
+35c34
+<         depends_on("cmake@3.27.9:")
+---
+>         depends_on("cmake@3.27.9")
+45c44
+<         depends_on("cetmodules@3.25.00:")
+---
+>         depends_on("cetmodules@3.25.00")
+51c50
+<         depends_on("libxml2@2.9")
+---
+>         depends_on("libxml2@2.9.12")
+60c59
+<         depends_on("root@6.30.06 +http+mlp+root7+spectrum+tmva+tmva-sofie cxxstd=20", when="+root")
+---
+>         depends_on("root@6.30.06 cxxstd=20", when="+root")
+75c74
+<         depends_on("cetmodules@3.24.01:")
+---
+>         depends_on("cetmodules@3.24.01")
+Binary files old_fnal_art/packages/art-suite/__pycache__/package.cpython-36.pyc and /daq/software/ALCF_SBN_spack_recipes/fnal_art/packages/art-suite/__pycache__/package.cpython-36.pyc differ
+Binary files old_fnal_art/packages/art-suite/__pycache__/package.cpython-39.pyc and /daq/software/ALCF_SBN_spack_recipes/fnal_art/packages/art-suite/__pycache__/package.cpython-39.pyc differ
+Only in /daq/software/ALCF_SBN_spack_recipes/fnal_art/packages: btrk
+diff -r old_fnal_art/packages/bxdecay0/package.py /daq/software/ALCF_SBN_spack_recipes/fnal_art/packages/bxdecay0/package.py
+9c9
+< import spack.util.web
+---
+> from spack import *
+Only in old_fnal_art/packages/bxdecay0/__pycache__: package.cpython-36.pyc
+Binary files old_fnal_art/packages/bxdecay0/__pycache__/package.cpython-39.pyc and /daq/software/ALCF_SBN_spack_recipes/fnal_art/packages/bxdecay0/__pycache__/package.cpython-39.pyc differ
+diff -r old_fnal_art/packages/cadmesh/package.py /daq/software/ALCF_SBN_spack_recipes/fnal_art/packages/cadmesh/package.py
+5a6
+> from spack import *
+Only in old_fnal_art/packages/cadmesh/__pycache__: package.cpython-36.pyc
+Binary files old_fnal_art/packages/cadmesh/__pycache__/package.cpython-39.pyc and /daq/software/ALCF_SBN_spack_recipes/fnal_art/packages/cadmesh/__pycache__/package.cpython-39.pyc differ
+Binary files old_fnal_art/packages/caencomm/__pycache__/package.cpython-36.pyc and /daq/software/ALCF_SBN_spack_recipes/fnal_art/packages/caencomm/__pycache__/package.cpython-36.pyc differ
+Binary files old_fnal_art/packages/caencomm/__pycache__/package.cpython-39.pyc and /daq/software/ALCF_SBN_spack_recipes/fnal_art/packages/caencomm/__pycache__/package.cpython-39.pyc differ
+Binary files old_fnal_art/packages/caendigitizer/__pycache__/package.cpython-36.pyc and /daq/software/ALCF_SBN_spack_recipes/fnal_art/packages/caendigitizer/__pycache__/package.cpython-36.pyc differ
+Binary files old_fnal_art/packages/caendigitizer/__pycache__/package.cpython-39.pyc and /daq/software/ALCF_SBN_spack_recipes/fnal_art/packages/caendigitizer/__pycache__/package.cpython-39.pyc differ
+Binary files old_fnal_art/packages/caenvmelib/__pycache__/package.cpython-36.pyc and /daq/software/ALCF_SBN_spack_recipes/fnal_art/packages/caenvmelib/__pycache__/package.cpython-36.pyc differ
+Binary files old_fnal_art/packages/caenvmelib/__pycache__/package.cpython-39.pyc and /daq/software/ALCF_SBN_spack_recipes/fnal_art/packages/caenvmelib/__pycache__/package.cpython-39.pyc differ
+Binary files old_fnal_art/packages/canvas/__pycache__/package.cpython-36.pyc and /daq/software/ALCF_SBN_spack_recipes/fnal_art/packages/canvas/__pycache__/package.cpython-36.pyc differ
+Binary files old_fnal_art/packages/canvas/__pycache__/package.cpython-39.pyc and /daq/software/ALCF_SBN_spack_recipes/fnal_art/packages/canvas/__pycache__/package.cpython-39.pyc differ
+Binary files old_fnal_art/packages/canvas-root-io/__pycache__/package.cpython-36.pyc and /daq/software/ALCF_SBN_spack_recipes/fnal_art/packages/canvas-root-io/__pycache__/package.cpython-36.pyc differ
+Binary files old_fnal_art/packages/canvas-root-io/__pycache__/package.cpython-39.pyc and /daq/software/ALCF_SBN_spack_recipes/fnal_art/packages/canvas-root-io/__pycache__/package.cpython-39.pyc differ
+diff -r old_fnal_art/packages/castxml/package.py /daq/software/ALCF_SBN_spack_recipes/fnal_art/packages/castxml/package.py
+22a23
+> from spack import *
+31a33
+>     version("0.6.2", sha256="9bb108de1b3348a257be5b08a9f8418f89fdcd4af2e6ee271d68b0203ac75d5e")
+42a45,52
+>     variant(
+>         "cxxstd",
+>         default="17",
+>         values=("14", "17", "20"),
+>         multi=False,
+>         description="Use the specified C++ standard when building.",
+>     )
+> 
+45a56,57
+>     patch("std.patch", when="@0.5.1")
+> 
+47,50c59,63
+<         # FIXME: Add arguments other than
+<         # FIXME: CMAKE_INSTALL_PREFIX and CMAKE_BUILD_TYPE
+<         # FIXME: If not needed delete this function
+<         args = []
+---
+>         llvm_version = self.spec["llvm"].version
+>         args = [
+>             "-DCMAKE_CXX_FLAGS=-std=c++{0}".format(self.spec.variants["cxxstd"].value),
+>             "-DCLANG_RESOURCE_DIR={0}/{1}".format(self.spec["llvm"].prefix.lib.clang, self.spec["llvm"].version)
+>         ]
+51a65
+> 
+Only in old_fnal_art/packages/castxml/__pycache__: package.cpython-36.pyc
+Binary files old_fnal_art/packages/castxml/__pycache__/package.cpython-39.pyc and /daq/software/ALCF_SBN_spack_recipes/fnal_art/packages/castxml/__pycache__/package.cpython-39.pyc differ
+Only in /daq/software/ALCF_SBN_spack_recipes/fnal_art/packages/castxml: std.patch
+diff -r old_fnal_art/packages/cetbuildtools/package.py /daq/software/ALCF_SBN_spack_recipes/fnal_art/packages/cetbuildtools/package.py
+24c24
+< import spack.util.web
+---
+> from spack import *
+Binary files old_fnal_art/packages/cetbuildtools/__pycache__/package.cpython-36.pyc and /daq/software/ALCF_SBN_spack_recipes/fnal_art/packages/cetbuildtools/__pycache__/package.cpython-36.pyc differ
+Binary files old_fnal_art/packages/cetbuildtools/__pycache__/package.cpython-39.pyc and /daq/software/ALCF_SBN_spack_recipes/fnal_art/packages/cetbuildtools/__pycache__/package.cpython-39.pyc differ
+Binary files old_fnal_art/packages/cetlib/__pycache__/package.cpython-36.pyc and /daq/software/ALCF_SBN_spack_recipes/fnal_art/packages/cetlib/__pycache__/package.cpython-36.pyc differ
+Binary files old_fnal_art/packages/cetlib/__pycache__/package.cpython-39.pyc and /daq/software/ALCF_SBN_spack_recipes/fnal_art/packages/cetlib/__pycache__/package.cpython-39.pyc differ
+Binary files old_fnal_art/packages/cetlib-except/__pycache__/package.cpython-36.pyc and /daq/software/ALCF_SBN_spack_recipes/fnal_art/packages/cetlib-except/__pycache__/package.cpython-36.pyc differ
+Binary files old_fnal_art/packages/cetlib-except/__pycache__/package.cpython-39.pyc and /daq/software/ALCF_SBN_spack_recipes/fnal_art/packages/cetlib-except/__pycache__/package.cpython-39.pyc differ
+diff -r old_fnal_art/packages/cetmodules/package.py /daq/software/ALCF_SBN_spack_recipes/fnal_art/packages/cetmodules/package.py
+23,35d22
+< 
+<     version("3.27.02", sha256="b6d902b283ef1d7a7ad46da1356826427a1957228ffe8cb7d7fb063ce7ca6d30")
+<     version("3.27.01", sha256="5e64b874eb4953ad62c0de4ae8c279f0638e4a13b8c9515e50890c9952a73ee9")
+<     version("3.27.00", sha256="6926fd8df351713bce0382ab57760d398437687e24da40bbd1306d6b17d86661")
+<     version("3.26.00", sha256="0acf1a916cb378dba819dd954de1e5279db5053658827844886006466cec3dc8")
+<     version("3.25.00", sha256="9574d9f8e5757d79c11d6fb3b95c3227aa0028960733715c3e6b6b25a51ff5c5")
+<     version("3.24.01", sha256="6ef8b522b02298a787a318cda898deedc250cdd336dc3168fad934ef607b5916")
+<     version("3.22.02", sha256="bbd6a80ab3c495e49b3545230c97ae880755a5f1d39b71d89f07297bf835e5da")
+<     version("3.22.01", sha256="c72c47328adc0c95f905aae119c76d35513a0677f20163f0ef25a82bd0f72082")
+<     version("3.21.02", sha256="255d6d6c2455217734b208fc90919b90bc7c0f9a59a4706d329c642bff51f004")
+<     version("3.21.01", sha256="9f4b845f9ed09fb3a8ee7864ac487afd08a5b3e64abf394831ee927f91b08ebc")
+<     version("3.21.00", sha256="429ddecf2e905a6a3156c267005d17cd6e160533f28bcef0be40a9d0057e95e4")
+<     version("3.19.02", sha256="214172a59f4c3875a5d7c2617b9f50ed471c86404d85e2e5c72cadf5b499cdc6")
+36a24,31
+>     version("3.19.02", sha256="214172a59f4c3875a5d7c2617b9f50ed471c86404d85e2e5c72cadf5b499cdc6")
+>     version("3.21.00", sha256="429ddecf2e905a6a3156c267005d17cd6e160533f28bcef0be40a9d0057e95e4")
+>     version("3.21.01", sha256="9f4b845f9ed09fb3a8ee7864ac487afd08a5b3e64abf394831ee927f91b08ebc")
+>     version("3.21.02", sha256="255d6d6c2455217734b208fc90919b90bc7c0f9a59a4706d329c642bff51f004")
+>     version("3.22.01", sha256="c72c47328adc0c95f905aae119c76d35513a0677f20163f0ef25a82bd0f72082")
+>     version("3.22.02", sha256="bbd6a80ab3c495e49b3545230c97ae880755a5f1d39b71d89f07297bf835e5da")
+>     version("3.24.01", sha256="6ef8b522b02298a787a318cda898deedc250cdd336dc3168fad934ef607b5916")
+>     version("3.25.00", sha256="9574d9f8e5757d79c11d6fb3b95c3227aa0028960733715c3e6b6b25a51ff5c5")
+63c58,67
+<     depends_on("perl", type=("build", "test"))
+---
+>     perl_deps = {
+>         "perl-data-dumper": ("build", "run"),
+>         "perl-json": ("build", "run"),
+>         "perl-list-moreutils": ("build", "run"),
+>         "perl-metacpan-client": ("build", "run"),
+>         "perl-path-tiny": ("build", "run"),
+>         "perl-readonly": ("build", "test", "run"),
+>         "perl-perl-tidy": ("build", "test", "run"),
+>         "perl-task-perl-critic": ("build", "test"),
+>     }
+79,82c83,84
+<         options = []
+<         if spec.satisfies("@:3"):
+<             options.extend(["--preset", "default"])
+<         if any(
+---
+>         options = ["--preset", "default"]
+>         if not any(
+89,90c91,92
+<             options.append(define("BUILD_DOCS", True))
+<         if spec.variants["versioned-docs"].value:
+---
+>             options.append(define("BUILD_DOCS", False))
+>         elif spec.variants["versioned-docs"].value:
+100a103,106
+> 
+>     def url_for_version(self, version):
+>         url = "https://github.com/FNALssi/{0}/archive/refs/tags/v{1}.tar.gz"
+>         return url.format(self.name, version.underscored)
+Binary files old_fnal_art/packages/cetmodules/__pycache__/package.cpython-36.pyc and /daq/software/ALCF_SBN_spack_recipes/fnal_art/packages/cetmodules/__pycache__/package.cpython-36.pyc differ
+Binary files old_fnal_art/packages/cetmodules/__pycache__/package.cpython-39.pyc and /daq/software/ALCF_SBN_spack_recipes/fnal_art/packages/cetmodules/__pycache__/package.cpython-39.pyc differ
+diff -r old_fnal_art/packages/cetpkgsupport/package.py /daq/software/ALCF_SBN_spack_recipes/fnal_art/packages/cetpkgsupport/package.py
+5a6
+> from spack import *
+Only in old_fnal_art/packages/cetpkgsupport/__pycache__: package.cpython-36.pyc
+Binary files old_fnal_art/packages/cetpkgsupport/__pycache__/package.cpython-39.pyc and /daq/software/ALCF_SBN_spack_recipes/fnal_art/packages/cetpkgsupport/__pycache__/package.cpython-39.pyc differ
+Only in old_fnal_art/packages/compiler-runtime/__pycache__: package.cpython-36.pyc
+Binary files old_fnal_art/packages/compiler-runtime/__pycache__/package.cpython-39.pyc and /daq/software/ALCF_SBN_spack_recipes/fnal_art/packages/compiler-runtime/__pycache__/package.cpython-39.pyc differ
+diff -r old_fnal_art/packages/cosmosis/package.py /daq/software/ALCF_SBN_spack_recipes/fnal_art/packages/cosmosis/package.py
+7a8
+> from spack import *
+Only in old_fnal_art/packages/cosmosis/__pycache__: package.cpython-36.pyc
+Binary files old_fnal_art/packages/cosmosis/__pycache__/package.cpython-39.pyc and /daq/software/ALCF_SBN_spack_recipes/fnal_art/packages/cosmosis/__pycache__/package.cpython-39.pyc differ
+diff -r old_fnal_art/packages/crc32c/package.py /daq/software/ALCF_SBN_spack_recipes/fnal_art/packages/crc32c/package.py
+6a7
+> from spack import *
+Only in old_fnal_art/packages/crc32c/__pycache__: package.cpython-36.pyc
+Binary files old_fnal_art/packages/crc32c/__pycache__/package.cpython-39.pyc and /daq/software/ALCF_SBN_spack_recipes/fnal_art/packages/crc32c/__pycache__/package.cpython-39.pyc differ
+Only in old_fnal_art/packages/critic/__pycache__: package.cpython-36.pyc
+Binary files old_fnal_art/packages/critic/__pycache__/package.cpython-39.pyc and /daq/software/ALCF_SBN_spack_recipes/fnal_art/packages/critic/__pycache__/package.cpython-39.pyc differ
+diff -r old_fnal_art/packages/cry/package.py /daq/software/ALCF_SBN_spack_recipes/fnal_art/packages/cry/package.py
+10a11
+> from spack import *
+Only in old_fnal_art/packages/cry/__pycache__: package.cpython-36.pyc
+Binary files old_fnal_art/packages/cry/__pycache__/package.cpython-39.pyc and /daq/software/ALCF_SBN_spack_recipes/fnal_art/packages/cry/__pycache__/package.cpython-39.pyc differ
+diff -r old_fnal_art/packages/dunetpc/package.py /daq/software/ALCF_SBN_spack_recipes/fnal_art/packages/dunetpc/package.py
+8a9
+> from spack import *
+Only in old_fnal_art/packages/dunetpc/__pycache__: package.cpython-36.pyc
+Binary files old_fnal_art/packages/dunetpc/__pycache__/package.cpython-39.pyc and /daq/software/ALCF_SBN_spack_recipes/fnal_art/packages/dunetpc/__pycache__/package.cpython-39.pyc differ
+diff -r old_fnal_art/packages/fhicl-cpp/package.py /daq/software/ALCF_SBN_spack_recipes/fnal_art/packages/fhicl-cpp/package.py
+22d21
+<     version("4.19.01", sha256="93ded157a40a45601095a5c5627337ac2ad35f76d08714d28ad2e05bc292f4e5")
+Binary files old_fnal_art/packages/fhicl-cpp/__pycache__/package.cpython-36.pyc and /daq/software/ALCF_SBN_spack_recipes/fnal_art/packages/fhicl-cpp/__pycache__/package.cpython-36.pyc differ
+Binary files old_fnal_art/packages/fhicl-cpp/__pycache__/package.cpython-39.pyc and /daq/software/ALCF_SBN_spack_recipes/fnal_art/packages/fhicl-cpp/__pycache__/package.cpython-39.pyc differ
+diff -r old_fnal_art/packages/fnal-github-package/package.py /daq/software/ALCF_SBN_spack_recipes/fnal_art/packages/fnal-github-package/package.py
+6,11d5
+< import bisect
+< import functools
+< import re
+< from functools import wraps
+< from pathlib import Path
+< 
+13d6
+< 
+15d7
+< import spack.util.web
+17d8
+< from spack.package import *
+18a10
+> from spack.package import *
+19a12,16
+> from functools import wraps
+> from pathlib import Path
+> import re
+> import bisect
+> import functools
+Binary files old_fnal_art/packages/fnal-github-package/__pycache__/package.cpython-36.pyc and /daq/software/ALCF_SBN_spack_recipes/fnal_art/packages/fnal-github-package/__pycache__/package.cpython-36.pyc differ
+Binary files old_fnal_art/packages/fnal-github-package/__pycache__/package.cpython-39.pyc and /daq/software/ALCF_SBN_spack_recipes/fnal_art/packages/fnal-github-package/__pycache__/package.cpython-39.pyc differ
+Only in old_fnal_art/packages/gallery/__pycache__: package.cpython-36.pyc
+Binary files old_fnal_art/packages/gallery/__pycache__/package.cpython-39.pyc and /daq/software/ALCF_SBN_spack_recipes/fnal_art/packages/gallery/__pycache__/package.cpython-39.pyc differ
+diff -r old_fnal_art/packages/genie/package.py /daq/software/ALCF_SBN_spack_recipes/fnal_art/packages/genie/package.py
+10a11
+> from spack import *
+28c29
+<     version("3.04.02", sha256="c5935aea86d2ba9897ab55bb581622c561575957d19e572691d3bc0833ed9512", preferred=True)
+---
+>     version("3.04.02", sha256="c5935aea86d2ba9897ab55bb581622c561575957d19e572691d3bc0833ed9512")
+71d71
+<     # Use mainline spack gettext for lhapdf
+72a73
+>     depends_on("genie-xsec")
+74,79c75
+<     # Issues caused by default root cxxstd being 11
+<     depends_on("root @6.24.08:6.28.12 +pythia6 cxxstd=14", when="cxxstd=14")
+<     depends_on("root @6.24.08:6.28.12 +pythia6 cxxstd=17", when="cxxstd=17")
+<     depends_on("root @6.24.08:6.28.12 +pythia6 cxxstd=17", when="cxxstd=default")
+<     depends_on("root @6.24.08:6.28.12 +pythia6 cxxstd=20", when="cxxstd=20")
+< 
+---
+>     depends_on("root+pythia6")
+91c87
+<     patch("patch/GENIE-Generator.patch", when="@3.04.00")
+---
+>     patch("patch/GENIE-Generator.patch", when="@3.04.02")
+94c90,94
+<     # @when("os=almalinux9") patch should be applied on polaris too
+---
+>     # @when("os=almalinux9")
+>     # def patch(self):
+>         # filter_file(r'-lnsl','','src/make/Make.include')
+> 
+>     # @when("os=almalinux9")
+97a98,109
+>     @property
+>     def build_targets(self):
+>         cxxstd = self.spec.variants["cxxstd"].value
+>         cxxstdflag = (
+>             "" if cxxstd == "default" else getattr(self.compiler, "cxx{0}_flag".format(cxxstd))
+>         )
+>         args = [
+>             "GOPT_WITH_CXX_USERDEF_FLAGS=-g -fno-omit-frame-pointer {0}".format(cxxstdflag),
+>             "all",
+>         ]
+>         return args
+> 
+105c117,118
+<             "--enable-nnbar-oscillation",
+---
+>             "--enable-neutron-osc",
+>             "--enable-vle-extension",
+161c174
+<             make()
+---
+>             make(*self.build_targets)
+163c176
+<             make()
+---
+>             make(*self.build_targets)
+171,172c184,186
+<         mkdirp(prefix.config) # necessary for tune functionality
+<         mkdirp(prefix.data) # necessary for PDG library lookup
+---
+>         mkdirp(prefix.data)
+>         mkdirp(prefix.config)
+>         mkdirp(prefix.data)
+190a205
+>         # Below added for tune functionality and PDG library access
+195c210
+<         spack_env.set("ROOT_INCLUDE_PATH", os.path.join(self.stage.source_path, "src"))
+---
+>         spack_env.prepend_path("ROOT_INCLUDE_PATH", os.path.join(self.stage.source_path, "src"))
+206,212d220
+< 
+<     def flag_handler(self, name, flags):
+<         if name == "cxxflags":
+<             cxxstd = self.spec.variants["cxxstd"].value
+<             if cxxstd != "default":
+<                 flags.append(getattr(self.compiler, f"cxx{cxxstd}_flag"))
+<         return (flags, None, None)
+Only in old_fnal_art/packages/genie/__pycache__: package.cpython-36.pyc
+Binary files old_fnal_art/packages/genie/__pycache__/package.cpython-39.pyc and /daq/software/ALCF_SBN_spack_recipes/fnal_art/packages/genie/__pycache__/package.cpython-39.pyc differ
+diff -r old_fnal_art/packages/genie-phyopt/package.py /daq/software/ALCF_SBN_spack_recipes/fnal_art/packages/genie-phyopt/package.py
+8a9
+> from spack import *
+15,16c16,18
+<     homepage = "https://www.example.com"
+<     url = "file://" + os.path.dirname(__file__) + "/../../config/junk.xml"
+---
+>     #url = "file://" + os.path.dirname(__file__) + "/../../config/junk.xml"
+>     url = "https://scisoft.fnal.gov/scisoft/packages/genie_phyopt/v2_12_0/genie_phyopt-2.12.0-noarch-dkcharm.tar.bz2" 
+>     version("3.04.00", sha256="c4a5360e379d371df2b2e845aee673b984a2f0f6ba62dae682f8cb0223e84a0f") # FIXME
+30,43d31
+<     resource(
+<         name="dkcharm",
+<         when="phyopt_name=dkcharm",
+<         url=baseurl + "dkcharm.tar.bz2",
+<         sha256="5764cc6e7fc23f721177761526b75725b73970cd941064c23563d9ccaa3de0dc",
+<     )
+< 
+<     resource(
+<         name="dkcharmtau",
+<         when="phyopt_name=dkcharmtau",
+<         url=baseurl + "dkcharmtau.tar.bz2",
+<         sha256="ff0ecafd9a9455e8c20963c608c666f7229324c3f43e69fa58902584de08532a",
+<     )
+< 
+51a40,46
+> 
+>     def url_for_version(self, version):
+>         url = "https://scisoft.fnal.gov/scisoft/packages/genie_phyopt/v{0}/genie_phyopt-{1}-noarch-{2}.tar.bz2"
+>         try:
+>             return url.format(version.underscored, version.dotted, self.spec.variants["phyopt_name"].value)
+>         except:
+>             return url.format(version.underscored, version.dotted, "dkcharm")
+Only in old_fnal_art/packages/genie-phyopt/__pycache__: package.cpython-36.pyc
+Binary files old_fnal_art/packages/genie-phyopt/__pycache__/package.cpython-39.pyc and /daq/software/ALCF_SBN_spack_recipes/fnal_art/packages/genie-phyopt/__pycache__/package.cpython-39.pyc differ
+diff -r old_fnal_art/packages/genie-xsec/package.py /daq/software/ALCF_SBN_spack_recipes/fnal_art/packages/genie-xsec/package.py
+7a8
+> from spack import *
+14,15c15,16
+<     version("3.04.00", sha256="fb4dc9badd1771c92fabbf818b33544006e8b60c7fb0f33d5288a66d93bd19ea", 
+<              url="https://scisoft.fnal.gov/scisoft/packages/genie_xsec/v3_04_00/genie_xsec-3.04.00-noarch-G1810a0211a-k250-e1000.tar.bz2")
+---
+>     url = "https://scisoft.fnal.gov/scisoft/packages/genie_xsec/v3_04_00/genie_xsec-3.04.00-noarch-G1810a0211a-k250-e1000.tar.bz2"
+>     version("3_04_00", sha256="fb4dc9badd1771c92fabbf818b33544006e8b60c7fb0f33d5288a66d93bd19ea")
+17,20c18
+<     version("2.12.10", "2cae8b754a9f824ddd27964d11732941fd88f52f0880d7f685017caba7fea6b7", 
+<              expand=False, url="file://" + os.path.dirname(__file__) + "/../../config/junk.xml")
+< 
+<     # tune_name values are designed to line up with the ups setup command
+---
+>     # xsec_name values are designed to line up with the ups setup command
+24c22
+<         "tune_name",
+---
+>         "xsec_name",
+37d34
+<         when="@3.0:",
+40,43c37,39
+< 
+<     urlbase_2 = ("https://scisoft.fnal.gov/scisoft/packages/genie_xsec/v2_12_10/genie_xsec-2.12.10-noarch-")
+<     urlbase_3 = ("https://scisoft.fnal.gov/scisoft/packages/genie_xsec/v3_04_00/genie_xsec-3.04.00-noarch-")
+< 
+---
+>     urlbase = (
+>          "https://scisoft.fnal.gov/scisoft/packages/genie_xsec/v3_04_00/genie_xsec-3.04.00-noarch-"
+>     )
+47,48c43,44
+<         when="tune_name=AR2320i00000-k250-e1000",
+<         url=urlbase_3 + "AR2320i00000-k250-e1000.tar.bz2",
+---
+>         when="xsec_name=AR2320i00000-k250-e1000",
+>         url=urlbase + "AR2320i00000-k250-e1000.tar.bz2",
+55,56c51,52
+<         when="tune_name=G1801a00000-k250-e1000",
+<         url=urlbase_3 + "G1801a00000-k250-e1000.tar.bz2",
+---
+>         when="xsec_name=G1801a00000-k250-e1000",
+>         url=urlbase + "G1801a00000-k250-e1000.tar.bz2",
+63,64c59,60
+<         when="tune_name=G1802a00000-k250-e1000",
+<         url=urlbase_3 + "G1802a00000-k250-e1000.tar.bz2",
+---
+>         when="xsec_name=G1802a00000-k250-e1000",
+>         url=urlbase + "G1802a00000-k250-e1000.tar.bz2",
+71,72c67,68
+<         when="tune_name=G1810a0211a-k250-e1000",
+<         url=urlbase_3 + "G1810a0211a-k250-e1000.tar.bz2",
+---
+>         when="xsec_name=G1810a0211a-k250-e1000",
+>         url=urlbase + "G1810a0211a-k250-e1000.tar.bz2",
+79,80c75,76
+<         when="tune_name=G1810a0211b-k250-e1000",
+<         url=urlbase_3 + "G1810a0211b-k250-e1000.tar.bz2",
+---
+>         when="xsec_name=G1810a0211b-k250-e1000",
+>         url=urlbase + "G1810a0211b-k250-e1000.tar.bz2",
+87,88c83,84
+<         when="tune_name=G2111a00000-k250-e1000",
+<         url=urlbase_3 + "G2111a00000-k250-e1000.tar.bz2",
+---
+>         when="xsec_name=G2111a00000-k250-e1000",
+>         url=urlbase + "G2111a00000-k250-e1000.tar.bz2",
+95,96c91,92
+<         when="tune_name=GDNu2001a00000-k120-e200",
+<         url=urlbase_3 + "GDNu2001a00000-k120-e200.tar.bz2",
+---
+>         when="xsec_name=GDNu2001a00000-k120-e200",
+>         url=urlbase + "GDNu2001a00000-k120-e200.tar.bz2",
+103,104c99,100
+<         when="tune_name=N1810j0211a-k250-e1000",
+<         url=urlbase_3 + "N1810j0211a-k250-e1000.tar.bz2",
+---
+>         when="xsec_name=N1810j0211a-k250-e1000",
+>         url=urlbase + "N1810j0211a-k250-e1000.tar.bz2",
+108,166d103
+<     variant(
+<         "xsec_name",
+<         default="DefaultPlusMECWithNC",
+<         multi=False,
+<         values=(
+<             "AltPion",
+<             "DefaultPlusMECWithNC",
+<             "DefaultPlusValenciaMEC",
+<             "EffSFTEM",
+<             "LocalFGNievesQEAndMEC",
+<             "ValenciaQEBergerSehgalCOHRES",
+<         ),
+<         when="@:3.0",
+<         description="Name of genie xsec set to install.",
+<     )
+< 
+<     resource(
+<         name="AltPion",
+<         placement="AltPion",
+<         when="xsec_name=AltPion",
+<         url=urlbase_2 + "AltPion.tar.bz2",
+<         sha256="49c4c5332c96edc4147e8cacd5b68e8dd89737e205741a21bc75a5ba18b967c4",
+<     )
+<     resource(
+<         name="DefaultPlusMECWithNC",
+<         placement="DefaultPlusMECWithNC",
+<         when="xsec_name=DefaultPlusMECWithNC",
+<         url=urlbase_2 + "DefaultPlusMECWithNC.tar.bz2",
+<         sha256="7c57caa96c319ad8007253e2a81c6ffcc4dcc6d0923dabbf7b8938d8363ac621",
+<     )
+<     resource(
+<         name="DefaultPlusValenciaMEC",
+<         placement="DefaultPlusValenciaMEC",
+<         when="xsec_name=DefaultPlusValenciaMEC",
+<         url=urlbase_2 + "DefaultPlusValenciaMEC.tar.bz2",
+<         sha256="fe1b584e7014bba6c4cba5646e1031f344e9efbf799a2aa26b706e28c40a4481",
+<     )
+<     resource(
+<         name="EffSFTEM",
+<         placement="EffSFTEM",
+<         when="xsec_name=EffSFTEM",
+<         url=urlbase_2 + "EffSFTEM.tar.bz2",
+<         sha256="b6365f1a150b90b79788f51b084a1dce7432d8ba10b7faa03ade3f6d558c82f6",
+<     )
+<     resource(
+<         name="LocalFGNievesQEAndMEC",
+<         placement="LocalFGNievesQEAndMEC",
+<         when="xsec_name=LocalFGNievesQEAndMEC",
+<         url=urlbase_2 + "LocalFGNievesQEAndMEC.tar.bz2",
+<         sha256="5f02d7efa46ef42052834d80b6923b41e502994daaf6037dad9793799ad4b346",
+<     )
+<     resource(
+<         name="ValenciaQEBergerSehgalCOHRES",
+<         placement="ValenciaQEBergerSehgalCOHRES",
+<         when="xsec_name=ValenciaQEBergerSehgalCOHRES",
+<         url=urlbase_2 + "ValenciaQEBergerSehgalCOHRES.tar.bz2",
+<         sha256="3e7c117777cb0da6232df1e1fe481fdb2afbfe55639b0d7b4ddf8027954ed1fa",
+<     )
+< 
+168,182c105,112
+<         if(self.version >= Version("3.0")):
+<             val = spec.variants["tune_name"].value
+<             comb_str = val.split(':')[0].split('-')[0]
+<             tune_str = comb_str[:3]+"_"+comb_str[3:6]+"_"+comb_str[6:8]+"_"+comb_str[8:]
+< 
+<             install_tree(
+<                 "{0}/{2}/v{1}/NULL/{2}".format(self.stage.source_path, self.version.underscored, val),
+<                 "{0}/v{1}/NULL/{2}".format(prefix, self.version.underscored, val),
+<             )
+<         elif(self.version < Version("3.0")):
+<             val = spec.variants["xsec_name"].value
+<             install_tree(
+<                 "{0}/{2}/v{1}/NULL/{2}".format(self.stage.source_path, self.version.underscored, val),
+<                 "{0}/{1}".format(prefix, val),
+<             )
+---
+>         val = spec.variants["xsec_name"].value
+>         comb_str = val.split(':')[0].split('-')[0]
+>         tune_str = comb_str[:3]+"_"+comb_str[3:6]+"_"+comb_str[6:8]+"_"+comb_str[8:]
+> 
+>         install_tree(
+>             "{0}/{2}/v{1}/NULL/{2}".format(self.stage.source_path, self.version.underscored, val),
+>             "{0}/v{1}/NULL/{2}".format(prefix, self.version.underscored, val),
+>         )
+185,198c115,133
+<         if(self.version >= Version("3.0")):
+<             val = self.spec['genie-xsec'].variants['tune_name'].value
+<             data_str = "{0}/v{1}/NULL/{2}/data".format(self.spec['genie-xsec'].prefix, self.version.underscored, val)
+<             raw_str = self.spec['genie-xsec'].variants['tune_name'].value
+<             comb_str = raw_str.split(':')[0].split('-')[0]
+<             tune_str = comb_str[:-8]+"_"+comb_str[-8:-5]+"_"+comb_str[-5:-3]+"_"+comb_str[-3:] 
+< 
+<             run_env.set("GENIEXSECPATH", data_str)
+<             run_env.set("GENIEXSECFILE", data_str+"/gxspl-NUsmall.xml")
+<             run_env.set("GXMLPATH", data_str)
+<             run_env.set("GENIE_XSEC_TUNE", tune_str)
+<             run_env.set("GENIE_XSEC_GENLIST", "Default")
+<             run_env.set("GENIE_XSEC_KNOTS", "250")
+<             run_env.set("GENIE_XSEC_EMAX", "1000.0")
+---
+>         val = self.spec['genie-xsec'].variants['xsec_name'].value
+>         data_str = "{0}/v{1}/NULL/{2}/data".format(self.spec['genie-xsec'].prefix, self.version.underscored.string.replace('v', ''), val)
+>         raw_str = self.spec['genie-xsec'].variants['xsec_name'].value
+>         comb_str = raw_str.split(':')[0].split('-')[0]
+>         tune_str = comb_str[:-8]+"_"+comb_str[-8:-5]+"_"+comb_str[-5:-3]+"_"+comb_str[-3:] 
+>         run_env.unset("GENIEXSECPATH")
+>         run_env.set("GENIEXSECPATH", data_str)
+>         run_env.unset("GENIEXSECFILE")
+>         run_env.set("GENIEXSECFILE", data_str+"/gxspl-NUsmall.xml")
+>         run_env.unset("GXMLPATH")
+>         run_env.set("GXMLPATH", data_str)
+>         run_env.unset("GENIE_XSEC_TUNE")
+>         run_env.set("GENIE_XSEC_TUNE", tune_str)
+>         run_env.unset("GENIE_XSEC_GENLIST")
+>         run_env.set("GENIE_XSEC_GENLIST", "Default")
+>         run_env.unset("GENIE_XSEC_KNOTS")
+>         run_env.set("GENIE_XSEC_KNOTS", "250")
+>         run_env.unset("GENIE_XSEC_EMAX")
+>         run_env.set("GENIE_XSEC_EMAX", "1000.0")
+Only in old_fnal_art/packages/genie-xsec/__pycache__: package.cpython-36.pyc
+Binary files old_fnal_art/packages/genie-xsec/__pycache__/package.cpython-39.pyc and /daq/software/ALCF_SBN_spack_recipes/fnal_art/packages/genie-xsec/__pycache__/package.cpython-39.pyc differ
+Only in /daq/software/ALCF_SBN_spack_recipes/fnal_art/packages: gettext
+diff -r old_fnal_art/packages/gitflow/package.py /daq/software/ALCF_SBN_spack_recipes/fnal_art/packages/gitflow/package.py
+5a6
+> from spack import *
+Only in old_fnal_art/packages/gitflow/__pycache__: package.cpython-36.pyc
+Binary files old_fnal_art/packages/gitflow/__pycache__/package.cpython-39.pyc and /daq/software/ALCF_SBN_spack_recipes/fnal_art/packages/gitflow/__pycache__/package.cpython-39.pyc differ
+diff -r old_fnal_art/packages/gm2/package.py /daq/software/ALCF_SBN_spack_recipes/fnal_art/packages/gm2/package.py
+6a7
+> from spack import *
+Only in old_fnal_art/packages/gm2/__pycache__: package.cpython-36.pyc
+Binary files old_fnal_art/packages/gm2/__pycache__/package.cpython-39.pyc and /daq/software/ALCF_SBN_spack_recipes/fnal_art/packages/gm2/__pycache__/package.cpython-39.pyc differ
+diff -r old_fnal_art/packages/gm2analyses/package.py /daq/software/ALCF_SBN_spack_recipes/fnal_art/packages/gm2analyses/package.py
+5a6
+> from spack import *
+Only in old_fnal_art/packages/gm2analyses/__pycache__: package.cpython-36.pyc
+Binary files old_fnal_art/packages/gm2analyses/__pycache__/package.cpython-39.pyc and /daq/software/ALCF_SBN_spack_recipes/fnal_art/packages/gm2analyses/__pycache__/package.cpython-39.pyc differ
+diff -r old_fnal_art/packages/gm2aux/package.py /daq/software/ALCF_SBN_spack_recipes/fnal_art/packages/gm2aux/package.py
+6a7
+> from spack import *
+Only in old_fnal_art/packages/gm2aux/__pycache__: package.cpython-36.pyc
+Binary files old_fnal_art/packages/gm2aux/__pycache__/package.cpython-39.pyc and /daq/software/ALCF_SBN_spack_recipes/fnal_art/packages/gm2aux/__pycache__/package.cpython-39.pyc differ
+diff -r old_fnal_art/packages/gm2calo/package.py /daq/software/ALCF_SBN_spack_recipes/fnal_art/packages/gm2calo/package.py
+5a6
+> from spack import *
+Only in old_fnal_art/packages/gm2calo/__pycache__: package.cpython-36.pyc
+Binary files old_fnal_art/packages/gm2calo/__pycache__/package.cpython-39.pyc and /daq/software/ALCF_SBN_spack_recipes/fnal_art/packages/gm2calo/__pycache__/package.cpython-39.pyc differ
+diff -r old_fnal_art/packages/gm2dataproducts/package.py /daq/software/ALCF_SBN_spack_recipes/fnal_art/packages/gm2dataproducts/package.py
+6a7
+> from spack import *
+Only in old_fnal_art/packages/gm2dataproducts/__pycache__: package.cpython-36.pyc
+Binary files old_fnal_art/packages/gm2dataproducts/__pycache__/package.cpython-39.pyc and /daq/software/ALCF_SBN_spack_recipes/fnal_art/packages/gm2dataproducts/__pycache__/package.cpython-39.pyc differ
+diff -r old_fnal_art/packages/gm2db/package.py /daq/software/ALCF_SBN_spack_recipes/fnal_art/packages/gm2db/package.py
+6a7
+> from spack import *
+Only in old_fnal_art/packages/gm2db/__pycache__: package.cpython-36.pyc
+Binary files old_fnal_art/packages/gm2db/__pycache__/package.cpython-39.pyc and /daq/software/ALCF_SBN_spack_recipes/fnal_art/packages/gm2db/__pycache__/package.cpython-39.pyc differ
+diff -r old_fnal_art/packages/gm2field/package.py /daq/software/ALCF_SBN_spack_recipes/fnal_art/packages/gm2field/package.py
+6a7
+> from spack import *
+Only in old_fnal_art/packages/gm2field/__pycache__: package.cpython-36.pyc
+Binary files old_fnal_art/packages/gm2field/__pycache__/package.cpython-39.pyc and /daq/software/ALCF_SBN_spack_recipes/fnal_art/packages/gm2field/__pycache__/package.cpython-39.pyc differ
+diff -r old_fnal_art/packages/gm2fieldsignal/package.py /daq/software/ALCF_SBN_spack_recipes/fnal_art/packages/gm2fieldsignal/package.py
+6a7
+> from spack import *
+Only in old_fnal_art/packages/gm2fieldsignal/__pycache__: package.cpython-36.pyc
+Binary files old_fnal_art/packages/gm2fieldsignal/__pycache__/package.cpython-39.pyc and /daq/software/ALCF_SBN_spack_recipes/fnal_art/packages/gm2fieldsignal/__pycache__/package.cpython-39.pyc differ
+diff -r old_fnal_art/packages/gm2geom/package.py /daq/software/ALCF_SBN_spack_recipes/fnal_art/packages/gm2geom/package.py
+6a7
+> from spack import *
+Only in old_fnal_art/packages/gm2geom/__pycache__: package.cpython-36.pyc
+Binary files old_fnal_art/packages/gm2geom/__pycache__/package.cpython-39.pyc and /daq/software/ALCF_SBN_spack_recipes/fnal_art/packages/gm2geom/__pycache__/package.cpython-39.pyc differ
+Only in old_fnal_art/packages/gm2midas/__pycache__: package.cpython-36.pyc
+Binary files old_fnal_art/packages/gm2midas/__pycache__/package.cpython-39.pyc and /daq/software/ALCF_SBN_spack_recipes/fnal_art/packages/gm2midas/__pycache__/package.cpython-39.pyc differ
+diff -r old_fnal_art/packages/gm2midastoart/package.py /daq/software/ALCF_SBN_spack_recipes/fnal_art/packages/gm2midastoart/package.py
+6a7
+> from spack import *
+Only in old_fnal_art/packages/gm2midastoart/__pycache__: package.cpython-36.pyc
+Binary files old_fnal_art/packages/gm2midastoart/__pycache__/package.cpython-39.pyc and /daq/software/ALCF_SBN_spack_recipes/fnal_art/packages/gm2midastoart/__pycache__/package.cpython-39.pyc differ
+diff -r old_fnal_art/packages/gm2pip/package.py /daq/software/ALCF_SBN_spack_recipes/fnal_art/packages/gm2pip/package.py
+6a7
+> from spack import *
+Only in old_fnal_art/packages/gm2pip/__pycache__: package.cpython-36.pyc
+Binary files old_fnal_art/packages/gm2pip/__pycache__/package.cpython-39.pyc and /daq/software/ALCF_SBN_spack_recipes/fnal_art/packages/gm2pip/__pycache__/package.cpython-39.pyc differ
+diff -r old_fnal_art/packages/gm2reconeast/package.py /daq/software/ALCF_SBN_spack_recipes/fnal_art/packages/gm2reconeast/package.py
+6a7
+> from spack import *
+Only in old_fnal_art/packages/gm2reconeast/__pycache__: package.cpython-36.pyc
+Binary files old_fnal_art/packages/gm2reconeast/__pycache__/package.cpython-39.pyc and /daq/software/ALCF_SBN_spack_recipes/fnal_art/packages/gm2reconeast/__pycache__/package.cpython-39.pyc differ
+diff -r old_fnal_art/packages/gm2ringsim/package.py /daq/software/ALCF_SBN_spack_recipes/fnal_art/packages/gm2ringsim/package.py
+6a7
+> from spack import *
+Only in old_fnal_art/packages/gm2ringsim/__pycache__: package.cpython-36.pyc
+Binary files old_fnal_art/packages/gm2ringsim/__pycache__/package.cpython-39.pyc and /daq/software/ALCF_SBN_spack_recipes/fnal_art/packages/gm2ringsim/__pycache__/package.cpython-39.pyc differ
+diff -r old_fnal_art/packages/gm2templates/package.py /daq/software/ALCF_SBN_spack_recipes/fnal_art/packages/gm2templates/package.py
+6a7
+> from spack import *
+Only in old_fnal_art/packages/gm2templates/__pycache__: package.cpython-36.pyc
+Binary files old_fnal_art/packages/gm2templates/__pycache__/package.cpython-39.pyc and /daq/software/ALCF_SBN_spack_recipes/fnal_art/packages/gm2templates/__pycache__/package.cpython-39.pyc differ
+diff -r old_fnal_art/packages/gm2tracker/package.py /daq/software/ALCF_SBN_spack_recipes/fnal_art/packages/gm2tracker/package.py
+6a7
+> from spack import *
+Only in old_fnal_art/packages/gm2tracker/__pycache__: package.cpython-36.pyc
+Binary files old_fnal_art/packages/gm2tracker/__pycache__/package.cpython-39.pyc and /daq/software/ALCF_SBN_spack_recipes/fnal_art/packages/gm2tracker/__pycache__/package.cpython-39.pyc differ
+diff -r old_fnal_art/packages/gm2trackerdaq/package.py /daq/software/ALCF_SBN_spack_recipes/fnal_art/packages/gm2trackerdaq/package.py
+6a7
+> from spack import *
+Only in old_fnal_art/packages/gm2trackerdaq/__pycache__: package.cpython-36.pyc
+Binary files old_fnal_art/packages/gm2trackerdaq/__pycache__/package.cpython-39.pyc and /daq/software/ALCF_SBN_spack_recipes/fnal_art/packages/gm2trackerdaq/__pycache__/package.cpython-39.pyc differ
+diff -r old_fnal_art/packages/gm2unpackers/package.py /daq/software/ALCF_SBN_spack_recipes/fnal_art/packages/gm2unpackers/package.py
+6a7
+> from spack import *
+Only in old_fnal_art/packages/gm2unpackers/__pycache__: package.cpython-36.pyc
+Binary files old_fnal_art/packages/gm2unpackers/__pycache__/package.cpython-39.pyc and /daq/software/ALCF_SBN_spack_recipes/fnal_art/packages/gm2unpackers/__pycache__/package.cpython-39.pyc differ
+diff -r old_fnal_art/packages/gm2util/package.py /daq/software/ALCF_SBN_spack_recipes/fnal_art/packages/gm2util/package.py
+6a7
+> from spack import *
+Only in old_fnal_art/packages/gm2util/__pycache__: package.cpython-36.pyc
+Binary files old_fnal_art/packages/gm2util/__pycache__/package.cpython-39.pyc and /daq/software/ALCF_SBN_spack_recipes/fnal_art/packages/gm2util/__pycache__/package.cpython-39.pyc differ
+Only in old_fnal_art/packages: go-jsonnet
+diff -r old_fnal_art/packages/google-benchmark/package.py /daq/software/ALCF_SBN_spack_recipes/fnal_art/packages/google-benchmark/package.py
+6a7
+> from spack import *
+8d8
+< 
+Only in old_fnal_art/packages/google-benchmark/__pycache__: package.cpython-36.pyc
+Binary files old_fnal_art/packages/google-benchmark/__pycache__/package.cpython-39.pyc and /daq/software/ALCF_SBN_spack_recipes/fnal_art/packages/google-benchmark/__pycache__/package.cpython-39.pyc differ
+diff -r old_fnal_art/packages/google-cloud-cpp/package.py /daq/software/ALCF_SBN_spack_recipes/fnal_art/packages/google-cloud-cpp/package.py
+6a7
+> from spack import *
+Only in old_fnal_art/packages/google-cloud-cpp/__pycache__: package.cpython-36.pyc
+Binary files old_fnal_art/packages/google-cloud-cpp/__pycache__/package.cpython-39.pyc and /daq/software/ALCF_SBN_spack_recipes/fnal_art/packages/google-cloud-cpp/__pycache__/package.cpython-39.pyc differ
+Only in /daq/software/ALCF_SBN_spack_recipes/fnal_art/packages: grpc
+Binary files old_fnal_art/packages/hep-concurrency/__pycache__/package.cpython-36.pyc and /daq/software/ALCF_SBN_spack_recipes/fnal_art/packages/hep-concurrency/__pycache__/package.cpython-36.pyc differ
+Binary files old_fnal_art/packages/hep-concurrency/__pycache__/package.cpython-39.pyc and /daq/software/ALCF_SBN_spack_recipes/fnal_art/packages/hep-concurrency/__pycache__/package.cpython-39.pyc differ
+Only in old_fnal_art/packages/hep-hpc/__pycache__: package.cpython-36.pyc
+Binary files old_fnal_art/packages/hep-hpc/__pycache__/package.cpython-39.pyc and /daq/software/ALCF_SBN_spack_recipes/fnal_art/packages/hep-hpc/__pycache__/package.cpython-39.pyc differ
+diff -r old_fnal_art/packages/icarusalg/package.py /daq/software/ALCF_SBN_spack_recipes/fnal_art/packages/icarusalg/package.py
+9c9
+< import spack.util.web
+---
+> from spack import *
+28d27
+< 
+45,47c44,48
+<     version(
+<         "09.37.02.01", sha256="717678d1015441349b892bb19efd2b09c5b5f6349dfb25a484bc9101d761b4eb"
+<     )
+---
+> 
+>     version("10.06.00.01", sha256="1ea71b17bc2877b3d617d21cd9b95523152e19917ce7ae66f48412398fcbcc59")
+>     version("10.04.04", sha256="23f7f222f63cd27bf37b6931a2fc138130b0aed6933a41789b6715de7cbf4b6f")
+>     version("09.91.02.01", sha256="c8bf89286de902edbd99224f9064caebc588fc30d6a35e169df716b99c9e54a7")
+>     version("09.37.02.01", sha256="717678d1015441349b892bb19efd2b09c5b5f6349dfb25a484bc9101d761b4eb")
+101a103,104
+>     depends_on("sqlite", type=("build", "run"))
+>     depends_on("sbnobj", type=("build", "run"))
+133a137,138
+>             "-DVDT_INCLUDE_DIR={0}".format(self.spec["vdt"].prefix.include), 
+>             "-DVDT_LIBRARY={0}".format(self.spec["vdt"].prefix.lib)
+179,187c184,192
+<         for d in self.spec.traverse(
+<             root=False,
+<             cover="nodes",
+<             order="post",
+<             deptype=("link"),
+<             direction="children",
+<         ):
+<             run_env.prepend_path("ROOT_INCLUDE_PATH", str(self.spec[d.name].prefix.include))
+<         run_env.prepend_path("ROOT_INCLUDE_PATH", self.prefix.include)
+---
+>         #for d in self.spec.traverse(
+>         #    root=False,
+>         #    cover="nodes",
+>         #    order="post",
+>         #    deptype=("link"),
+>         #    direction="children",
+>         #):
+>         #    run_env.prepend_path("ROOT_INCLUDE_PATH", str(self.spec[d.name].prefix.include))
+>         #run_env.prepend_path("ROOT_INCLUDE_PATH", self.prefix.include)
+191a197,199
+>         # fcls
+>         run_env.prepend_path("FHICL_FILE_PATH", self.prefix.fcl)
+> 
+205a214,215
+>         # fcls
+>         spack_env.prepend_path("FHICL_FILE_PATH", self.prefix.fcl)
+Only in old_fnal_art/packages/icarusalg/__pycache__: package.cpython-36.pyc
+Binary files old_fnal_art/packages/icarusalg/__pycache__/package.cpython-39.pyc and /daq/software/ALCF_SBN_spack_recipes/fnal_art/packages/icarusalg/__pycache__/package.cpython-39.pyc differ
+diff -r old_fnal_art/packages/icaruscode/package.py /daq/software/ALCF_SBN_spack_recipes/fnal_art/packages/icaruscode/package.py
+8a9
+> from spack import *
+49a51,55
+> 
+>     version("10.06.00.01p04", sha256="4ae01238f61b326feb9d58d1b4a33c7ad8f42054ad661d012b6041bd72288c3e")
+>     version("10.06.00.01", sha256="03c7d0f86e0247e04acc0f58c57c85d1ab735f65df8b375966bcb1135a0da22a")
+>     version("10.04.04", sha256="0b59e6ee4b1c04a6d146514a4e574882bf70de4c8956d08e357e2dee4de595e5")
+>     version("09.91.02.01", "77048becd1a960b9e4e19e110d05fca135457b224507f9feaada8d98d2f1cc2b")
+66a73
+>     patch("v09_91_02_01.patch", when="@09.91.02.01")
+71a79,82
+>     patch("spack.patch")
+> 
+>     def patch(self):
+>         filter_file('find_package\(icarusutil REQUIRED \)','','CMakeLists.txt')
+109c120
+<     depends_on("icarusutil", type=("build", "run"))
+---
+>     #depends_on("icarusutil", type=("build", "run"))
+114a126,127
+>     # larsimdnn might not be necessary, put here for consistency with sbnd
+>     depends_on("larsimdnn", type=("build", "run"))
+139a153,161
+>     depends_on("py-tensorflow", type=("build", "run"))
+> 
+>     depends_on("dk2nudata", type=("build", "run"))
+>     depends_on("cry", type=("build", "run"))
+>     depends_on("dk2nugenie", type=("build", "run"))
+>     depends_on("genie", type=("build", "run"))
+>     depends_on("log4cpp", type=("build", "run"))
+>     depends_on("rstartree", type=("build", "run"))
+>     depends_on("root@6.28.12", type=("build", "run"))
+153a176,177
+>             "-DWireCell_INCLUDE_DIR={0}".format(self.spec["wirecell"].prefix.include), 
+>             "-DWireCell_LIBRARIES={0}".format(self.spec["wirecell"].prefix.lib),
+156a181,184
+>             "-DCMAKE_PREFIX_PATH={0}/lib/python{1}/site-packages/torch:".format(
+>                 self.spec["py-torch"].prefix, self.spec["python"].version.up_to(2),
+>                 #self.spec["icarusutil"].prefix
+>             ),
+159a188,208
+>             "-DVDT_INCLUDE_DIR={0}".format(self.spec["vdt"].prefix.include),
+>             "-DVDT_LIBRARY={0}".format(self.spec["vdt"].prefix.lib),
+>             "-DSPDLOG_FMT_EXTERNAL=ON",
+>             self.define(
+>                 "CMAKE_PREFIX_PATH",
+>                 join_path(
+>                self.spec["py-tensorflow"].prefix.lib,
+>                "python{0}/site-packages/tensorflow".format(
+>                    self.spec["python"].version.up_to(2)
+>                ),
+>              )
+>            ),
+>            self.define(
+>                "TensorFlow_LIBRARIES",
+>                join_path(
+>                self.spec["py-tensorflow"].prefix.lib,
+>                "python{0}/site-packages/tensorflow".format(
+>                    self.spec["python"].version.up_to(2)
+>                ),
+>              ),
+>            ),
+163,167d211
+<     @property
+<     def cmake_prefix_paths(self):
+<         return "{0}/lib/python{1}/site-packages/torch".format(
+<                 self.spec["py-torch"].prefix, self.spec["python"].version.up_to(2))
+< 
+168a213,240
+>         #spack_env.prepend_path("JSONCPP_LIB", os.path.join(self.spec['jsoncpp'].prefix.lib64))
+>         #spack_env.prepend_path("JSONCPP_INC", os.path.join(self.spec['jsoncpp'].prefix.include))
+> 
+>         spack_env.prepend_path("ROOT_INCLUDE_PATH", os.path.join(self.spec['larcoreobj'].prefix.include))
+>         spack_env.prepend_path("CPLUS_INCLUDE_PATH", os.path.join(self.spec['larcoreobj'].prefix.include))
+>         spack_env.prepend_path("CPLUS_INCLUDE_PATH", os.path.join(self.spec['libuuid'].prefix.include))
+>         spack_env.prepend_path("CPLUS_INCLUDE_PATH", os.path.join(self.spec['nusimdata'].prefix.include))
+>         spack_env.prepend_path("C_INCLUDE_PATH", os.path.join(self.spec['larcoreobj'].prefix.include))
+>         spack_env.prepend_path("LARCOREOBJ_INC", os.path.join(self.spec['larcoreobj'].prefix.include))
+>         spack_env.prepend_path("LARCOREOBJ_LIB", os.path.join(self.spec['larcoreobj'].prefix.lib))
+>         spack_env.prepend_path("LARDATAOBJ_INC", os.path.join(self.spec['lardataobj'].prefix.include))
+>         spack_env.prepend_path("LARDATAOBJ_LIB", os.path.join(self.spec['lardataobj'].prefix.lib))
+>         #spack_env.prepend_path("WIRECELL_PATH", os.path.join(self.spec['wirecell'].prefix))
+>         #spack_env.prepend_path("WIRECELL_LIB", os.path.join(self.spec['wirecell'].prefix.lib))
+>         #spack_env.prepend_path("LD_LIBRARY_PATH", os.path.join(self.spec['wirecell'].prefix.lib))
+>         #spack_env.prepend_path("LD_LIBRARY_PATH", os.path.join(self.spec['jsoncpp'].prefix.lib64))
+>         #spack_env.prepend_path("WIRECELL_INC", os.path.join(self.spec['wirecell'].prefix.include))
+>         #spack_env.prepend_path("LARWIRECELL_INC", os.path.join(self.spec['larwirecell'].prefix.include))
+>         #spack_env.prepend_path("LARWIRECELL_LIB", os.path.join(self.spec['larwirecell'].prefix.lib))
+> 
+>         spack_env.set("WIRECELL_PATH", os.path.join(self.spec['wirecell'].prefix.share.wirecell))
+>         spack_env.set("WIRECELL_LIB", os.path.join(self.spec['wirecell'].prefix.lib))
+>         spack_env.set("WIRECELL_INC", os.path.join(self.spec['wirecell'].prefix.include))
+>         spack_env.set("LARWIRECELL_INC", os.path.join(self.spec['larwirecell'].prefix.include))
+>         spack_env.set("LARWIRECELL_LIB", os.path.join(self.spec['larwirecell'].prefix.lib))
+>         spack_env.set("JSONCPP_LIB", os.path.join(self.spec['jsoncpp'].prefix.lib64))
+>         spack_env.set("JSONCPP_INC", os.path.join(self.spec['jsoncpp'].prefix.include))
+> 
+169a242,243
+>         spack_env.set("SPDLOG_INC", self.spec["spdlog"].prefix.include)
+>         spack_env.set("SPDLOG_LIB", self.spec["spdlog"].prefix.lib)
+171c245
+<         spack_env.prepend_path("LD_LIBRARY_PATH", self.spec["root"].prefix.lib)
+---
+>         #spack_env.prepend_path("LD_LIBRARY_PATH", self.spec["root"].prefix.lib)
+177,180c251,254
+<         for d in self.spec.traverse(
+<             root=False, cover="nodes", order="post", deptype=("link"), direction="children"
+<         ):
+<             spack_env.prepend_path("ROOT_INCLUDE_PATH", str(self.spec[d.name].prefix.include))
+---
+>         #for d in self.spec.traverse(
+>         #    root=False, cover="nodes", order="post", deptype=("link"), direction="children"
+>         #):
+>         #    spack_env.prepend_path("ROOT_INCLUDE_PATH", str(self.spec[d.name].prefix.include))
+184a259
+>         #spack_env.append_path("CMAKE_PREFIX_PATH", self.spec['icarusutil'].prefix)
+186c261,267
+<         sanitize_environments(spack_env)
+---
+>         spack_env.set(
+>                 "Torch_DIR",
+>                 "{0}/lib/python{1}/site-packages/torch/share/cmake/Torch".format(
+>                     self.spec["py-torch"].prefix, self.spec["python"].version.up_to(2)
+>                 ))
+> 
+>         #sanitize_environments(spack_env)
+194,201c275,282
+<         for d in self.spec.traverse(
+<             root=False,
+<             cover="nodes",
+<             order="post",
+<             deptype=("link"),
+<             direction="children",
+<         ):
+<             run_env.prepend_path("ROOT_INCLUDE_PATH", str(self.spec[d.name].prefix.include))
+---
+>         #for d in self.spec.traverse(
+>         #    root=False,
+>         #    cover="nodes",
+>         #    order="post",
+>         #    deptype=("link"),
+>         #    direction="children",
+>         #):
+>         #    run_env.prepend_path("ROOT_INCLUDE_PATH", str(self.spec[d.name].prefix.include))
+206c287,299
+<         # Cleaup.
+---
+>         # fcls
+>         run_env.prepend_path("FHICL_FILE_PATH", self.prefix.fcl)
+>         # Add to wire-cell path
+>         #run_env.prepend_path("JSONCPP_LIB", os.path.join(self.spec['jsoncpp'].prefix.lib))
+>         #run_env.prepend_path("JSONCPP_INC", os.path.join(self.spec['jsoncpp'].prefix.include))
+>         #run_env.prepend_path("WIRECELL_PATH", os.path.join(self.spec['wirecell'].prefix))
+>         #run_env.prepend_path("WIRECELL_LIB", os.path.join(self.spec['wirecell'].prefix.lib))
+>         #run_env.prepend_path("LD_LIBRARY_PATH", os.path.join(self.spec['wirecell'].prefix.lib))
+>         #run_env.prepend_path("LD_LIBRARY_PATH", os.path.join(self.spec['jsoncpp'].prefix.lib))
+>         #run_env.prepend_path("WIRECELL_INC", os.path.join(self.spec['wirecell'].prefix.include))
+>         #run_env.prepend_path("LARWIRECELL_INC", os.path.join(self.spec['larwirecell'].prefix.include))
+>         #run_env.prepend_path("LARWIRECELL_LIB", os.path.join(self.spec['larwirecell'].prefix.lib))
+>         ## Cleaup.
+219a313,314
+>         # Add to wire-cell path
+>         run_env.prepend_path("WIRECELL_PATH", os.path.join(self.spec['wirecell'].prefix))
+Only in old_fnal_art/packages/icaruscode/__pycache__: package.cpython-36.pyc
+Binary files old_fnal_art/packages/icaruscode/__pycache__/package.cpython-39.pyc and /daq/software/ALCF_SBN_spack_recipes/fnal_art/packages/icaruscode/__pycache__/package.cpython-39.pyc differ
+Only in /daq/software/ALCF_SBN_spack_recipes/fnal_art/packages/icaruscode: spack.patch
+Only in /daq/software/ALCF_SBN_spack_recipes/fnal_art/packages/icaruscode: v09_91_02_01_old.patch
+Only in /daq/software/ALCF_SBN_spack_recipes/fnal_art/packages/icaruscode: v09_91_02_01.patch
+diff -r old_fnal_art/packages/icarus-data/package.py /daq/software/ALCF_SBN_spack_recipes/fnal_art/packages/icarus-data/package.py
+2a3
+> from spack import *
+10c11,20
+< 
+---
+>     version(
+>         "09.93.06",
+>         sha256="4f4925cec724d5beec699fdfb13d511fa80dae52ad6be581e17ff415d2fc5c43",
+>         url="https://scisoft.fnal.gov/scisoft/packages/icarus_data/v09_93_06/icarus_data-09.93.06-noarch.tar.bz2",
+>         )
+>     version(
+>         "09.93.05",
+>         sha256="2cd66f3e36aa95496c47b790a9dd1e53eb2712b075d7c81aa75e334cc9f4acaf",
+>         url="https://scisoft.fnal.gov/scisoft/packages/icarus_data/v09_93_05/icarus_data-09.93.05-noarch.tar.bz2",
+>     )
+50a61,76
+>         #local_build = "/eagle/neutrinoGPU/icarus/icarus_testing"
+>         #print("echo IGNORING SPACK ICARUS-DATA DUE TO SCISOFT MISSING VERSION.")
+>         #print("echo USING LOCAL VERSION v09_93_05 INSTEAD.")
+>         #print("ls %s/icarus_data/WirecellData" % local_build)
+>         #env.set("ICARUS_DATA_VERSION", "v%s" % "09.93.05")
+>         #env.prepend_path("WIRECELL_PATH", "%s/icarus_data/WirecellData" % local_build)
+>         #env.prepend_path("FW_SEARCH_PATH", "%s/icarus_data" % local_build)
+>         #env.prepend_path("FW_SEARCH_PATH", "%s/icarus_data/NoiseHistos" % local_build)
+>         #env.prepend_path("FW_SEARCH_PATH", "%s/icarus_data/Responses" % local_build)
+>         #env.prepend_path("FW_SEARCH_PATH", "%s/icarus_data/PhotonLibrary" % local_build)
+>         #env.prepend_path("FW_SEARCH_PATH", "%s/icarus_data/CRT" % local_build)
+>         #env.prepend_path("FW_SEARCH_PATH", "%s/icarus_data/PandoraMVAs" % local_build)
+>         #env.prepend_path("FW_SEARCH_PATH", "%s/icarus_data/database" % local_build)
+>         #env.prepend_path("CMAKE_PREFIX_PATH", "%s" % local_build)
+>         #env.prepend_path("PKG_CONFIG_PATH", "%s" % local_build)
+> 
+Only in old_fnal_art/packages/icarus-data/__pycache__: package.cpython-36.pyc
+Binary files old_fnal_art/packages/icarus-data/__pycache__/package.cpython-39.pyc and /daq/software/ALCF_SBN_spack_recipes/fnal_art/packages/icarus-data/__pycache__/package.cpython-39.pyc differ
+diff -r old_fnal_art/packages/icarus-signal-processing/package.py /daq/software/ALCF_SBN_spack_recipes/fnal_art/packages/icarus-signal-processing/package.py
+9c9
+< import spack.util.web
+---
+> from spack import *
+38a39,40
+>     version("10.06.00.01", sha256="11d87c100bb00f4e675917d33971a464ea5017e66f5970afcf0cd0cc2ca6e446")
+>     version("09.88.00.02", sha256="5fba1ecd9dc454497b3e9235742a4715e3b0fea80f701ae57ed7c5ccd260d0f8")
+60a63
+>     patch("v09_88_00_02.patch", when="@09.88.00.02")
+88a92,97
+>     def patch(self):
+>         print("AAAAA")
+>         filter_file('find_package\(FFTW3q REQUIRED EXPORT\)', '', 'CMakeLists.txt')
+>         filter_file('find_package\(FFTW3l REQUIRED EXPORT\)', '', 'CMakeLists.txt')
+>         filter_file('isnan', 'std::isnan','icarus_signal_processing/WaveformTools.h')
+> 
+91c100,104
+<         args = ["-DCMAKE_CXX_STANDARD={0}".format(self.spec.variants["cxxstd"].value)]
+---
+>         args = [
+>                 "-DCMAKE_CXX_STANDARD={0}".format(self.spec.variants["cxxstd"].value),            
+>                 "-DVDT_INCLUDE_DIR={0}".format(self.spec["vdt"].prefix.include),
+>                 "-DVDT_LIBRARY={0}".format(self.spec["vdt"].prefix.lib)
+>                 ]
+110a124,125
+>         run_env.prepend_path("VDT_INCLUDE_DIR", self.spec['vdt'].prefix.include)
+>         run_env.prepend_path("VDT_LIBRARY", self.spec['vdt'].prefix.lib)
+Only in old_fnal_art/packages/icarus-signal-processing/__pycache__: package.cpython-36.pyc
+Binary files old_fnal_art/packages/icarus-signal-processing/__pycache__/package.cpython-39.pyc and /daq/software/ALCF_SBN_spack_recipes/fnal_art/packages/icarus-signal-processing/__pycache__/package.cpython-39.pyc differ
+Only in /daq/software/ALCF_SBN_spack_recipes/fnal_art/packages/icarus-signal-processing: v09_88_00_02.patch
+diff -r old_fnal_art/packages/icarusutil/package.py /daq/software/ALCF_SBN_spack_recipes/fnal_art/packages/icarusutil/package.py
+8a9
+> from spack import *
+42a44
+>     version("09.88.00.02", tag="v09_88_00_02", git=git_base, get_full_repo=True)
+55a58,59
+>     patch("spack.patch")
+> 
+62c66
+<     patch("cetmodules2.patch")
+---
+>     #patch("cetmodules2.patch")
+91a96
+> 
+Only in old_fnal_art/packages/icarusutil/__pycache__: package.cpython-36.pyc
+Binary files old_fnal_art/packages/icarusutil/__pycache__/package.cpython-39.pyc and /daq/software/ALCF_SBN_spack_recipes/fnal_art/packages/icarusutil/__pycache__/package.cpython-39.pyc differ
+Only in /daq/software/ALCF_SBN_spack_recipes/fnal_art/packages/icarusutil: spack.patch
+diff -r old_fnal_art/packages/ifbeam/package.py /daq/software/ALCF_SBN_spack_recipes/fnal_art/packages/ifbeam/package.py
+16a17
+>     version("2.6.3", sha256="1a0d2cc50ef73d459b3d8e29e712606b9f5ef9c8e84dc06a50a809b1cc829128")
+19,27c20,26
+<     version("2.5.23", sha256="e8d11d057cbb25ec65f597c7eb9c73d463d9828c3b830866aa05e6652e305831")
+<     version("2.5.22", sha256="202b29e64aef1852310f0e4a550dcb47e5c6c86d6d162683f319ff4999460d12")
+<     version("2.5.17", sha256="7ecba2c84c585d3775a984a7de4a1152afc2ed60468cdce45bb380b6e28cab68")
+<     version("2.5.16", sha256="827c0acbe670818fdc91283c1f4e90719c2d873a3f46459e3ed65d6d0e96297c")
+<     version("2.5.2", sha256="7c1bac69dae5d3130741d9dd79295eb917e74eaadde9f808f10599db94a6a488")
+<     version("2.4.8", sha256="676b43be56c51f68c189d19e8c23a68e9bc489a7e3aaedb632e7600a168d9448")
+<     version("2.3.0", sha256="4b6a29443b631957ca2a7712b5c577620c6543e542ee9c77d246cef1e10f7324")
+<     version("2.2.13", sha256="b341ffc73421b7187b06c205f9feaccf117bdba06509e9b1b8f491fdc182029c")
+< 
+---
+>     version("2.6", sha256="c156a2ba05e7b6f376b678bd53dbca53558f7127ac5bbe32083a648eeb10f1c2")
+>     version("2.5.23", sha256="a0b4890045cf5efdb4f19183dd417a1f5fdfc82d62f44d989b21a55210b9aef6")
+>     version("2.5.22", sha256="648246ab995b16e5da7f95b1e63c1520d71cf91af942fc8e96f4fed24fae85ff")
+>     version("2.5.21", sha256="26b8abf691738a29256e14a14b1cfa50fdd709cf2462b87601cb3fa7e6d1c83d")
+>     version("2.5.20", sha256="fe29c9b60a169390ab58205c3859099a1636d866af545c6e6fd315b11f11f2e7")
+>     version("2.5.19", sha256="8b47f7011253d1686a31336cd3549d1e4675ad987750273d500bbeb14cf5ff22")
+>     version("2.5.18", sha256="fa10d65522b744b0230cb7bdc103a01f4248428a12a98510ec1c15d9cf81c51a")
+Only in old_fnal_art/packages/ifbeam/__pycache__: package.cpython-36.pyc
+Binary files old_fnal_art/packages/ifbeam/__pycache__/package.cpython-39.pyc and /daq/software/ALCF_SBN_spack_recipes/fnal_art/packages/ifbeam/__pycache__/package.cpython-39.pyc differ
+diff -r old_fnal_art/packages/ifdh-art/package.py /daq/software/ALCF_SBN_spack_recipes/fnal_art/packages/ifdh-art/package.py
+7c7
+< import spack.util.web
+---
+> from spack import *
+36,37c36,38
+<     version("2.18.00", sha256="890665a7de3bab4b2d34efe21038dca66d3c99e24f064c476c9b5b028eff959b")
+<     version("2.17.06", sha256="fed29b9ca80e8e956b8d60e915f94972ee50ed42fce346dd6f2151420d22b455") 
+---
+>     version("2.17.08", sha256="91fb581ef2a8b70679d1f96a13d0ab5fd5eaa92722bbe78147a2f89cbe6209a8") # FIXME
+>     version("2.17.07", sha256="ca59d5357e4e7948fcb5010d8f2505da973c5ebd76b3de9888bda49814338137")
+>     version("2.17.06", sha256="fed29b9ca80e8e956b8d60e915f94972ee50ed42fce346dd6f2151420d22b455")
+Only in old_fnal_art/packages/ifdh-art/__pycache__: package.cpython-36.pyc
+Binary files old_fnal_art/packages/ifdh-art/__pycache__/package.cpython-39.pyc and /daq/software/ALCF_SBN_spack_recipes/fnal_art/packages/ifdh-art/__pycache__/package.cpython-39.pyc differ
+diff -r old_fnal_art/packages/ifdhc/package.py /daq/software/ALCF_SBN_spack_recipes/fnal_art/packages/ifdhc/package.py
+20a21
+>     version("2.8.0", sha256="189404744961ca049366369b71b783e57540cd4f6a45b86f0aed5f14c198d590")
+21a23
+>     version("2.7.3", sha256="8a8caa1d14a0d39c8ccb96460b84cca51540f209535c62cd680243dc08d1db5f")
+24,39c26,33
+<     version("2.7", sha256="49c3e9fbc5a1ebb80d8fb870e45ec9faa6577c001a8a073521b071d51dd93bb8")
+<     version("2.6.20", sha256="54cffb88be5c085dd2f3246507cf850299b780e2ab16cd8abce4360e200b4044")
+<     version("2.6.19", sha256="5499391378d6769da0b94b0e8eaea358d6c7be40673e4c97c5580c4e94bdaa24")
+<     version("2.6.11", sha256="988eb6bd2124174e0956b4415edcc3671ac87896a64852e9e99d8628c4fa1334")
+<     version("2.6.10", sha256="44ee19429ec3c55be54582fb9411b68ebba9c90ae3ee8b770faa702f599a3f49")
+<     version("2.6.9", sha256="46dadbba0acdf19644496fd7c3eff2a046f745e9fe9fe68f42b7c499df293596")
+<     version("2.6.8", sha256="9a60403d06463f34c988d45a3049b1e09409c4a44ac08f45da920dc2eab26ff5")
+<     version("2.6.7", sha256="365949d19faf14200b4fa0f80dd881fbd4bbcf7f4699bab5e43358119d4109b8")
+<     version("2.6.6", sha256="fc04576e5ae82740f6a1797ebeeac6855338eb028a43b178f3f66183f4bb583e")
+<     version("2.5.16", sha256="5455f58042c7b84826fc72e77d21e9f0a5ec7efe5f40435571c52fb4c0e226fd")
+<     version("2.5.12", sha256="e8a8af62e5e9917e51c88b2cda889c2a195dfb7911e09c28aeaf10f54e8abf49")
+<     version("2.5.14", sha256="66ab9126bb3cb1f8d8dafb69568569d8856ab6770322efc7c5064252f27a8fda")
+<     version("2.3.9", sha256="1acdff224f32c3eb5780aed13cf0f23b431623a0ebc8a74210271b75b9f2f574")
+<     version("2.5.4", sha256="48bf6807cb8b3092677768f763c1f18940d852d685424a1ea386acf7f1606608")
+<     version("2.3.10", sha256="4da290f5fc3c9d4344792176e19e1d3278f87a634ebc1535bbd9a91aae2bbf9b")
+<     version("2.5.2", git=git_base, tag="v2_5_2", get_full_repo=True)
+---
+>     version("2.7", sha256="5a4f7c94191bb657415a51c6d73d789f820999b68c8d9c65ec74c845321aa7e2")
+>     version("2.6.20", sha256="cd473b3331474a75f87c3251e08c69bb3b0a7c98f53171c5a380049bca1a0cc2")
+>     version("2.6.19", sha256="8ce4cb631fb1662e3146a1877e92677859cb2196cf90504e7b4a55811cc45b4b")
+>     version("2.6.18", sha256="c8d353ea648177802b2c2e87213a4b5cbffa62cd6b340bc3c6d574402955791c")
+>     version("2.6.17", sha256="d4d3614122099f386d9b4e570dcd058a9d6853c96a8ec6beafcbcb8cee4ebb02")
+>     version("2.6.14", sha256="df6d78b62ba074aac84281b021037319623e2bc4a90bfb46a7129ebdf3281ec1")
+>     version("2.6.8", sha256="3dc0fca76815424a72613df68520dafc08341c9f60c80a766bda647819212d87")
+>     version("2.6.6", sha256="8ba4929ecefa5720ea999e39671a48b56a65f5f44ff99f2f473f9cd47277051e")
+101,104c95,99
+<     def install_cfg(self):
+<         cmd = "cp {0}/ifdh.cfg {1}/ifdh.cfg".format(self.stage.source_path, self.spec.prefix)
+<         tty.warn("installing ifdh.cfg: {0}".format(cmd))
+<         os.system(cmd)
+---
+>     def dont_overlap_ifdhc_config(self):
+>         # we want any environments built to point at ifdhc-config for
+>         # these files, not ifdhc, so don't include them in ifdhc
+>         for f in [ 'www_cp.sh', 'auth_session.sh', 'decode_token.sh' ]:
+>             os.unlink(os.path.join(self.spec.prefix.bin ,f))
+Only in old_fnal_art/packages/ifdhc/__pycache__: package.cpython-36.pyc
+Binary files old_fnal_art/packages/ifdhc/__pycache__/package.cpython-39.pyc and /daq/software/ALCF_SBN_spack_recipes/fnal_art/packages/ifdhc/__pycache__/package.cpython-39.pyc differ
+diff -r old_fnal_art/packages/ifdhc-config/package.py /daq/software/ALCF_SBN_spack_recipes/fnal_art/packages/ifdhc-config/package.py
+20a21
+>     version("2.8.0", sha256="189404744961ca049366369b71b783e57540cd4f6a45b86f0aed5f14c198d590")
+25,39c26,33
+<     version("2.6.20", sha256="54cffb88be5c085dd2f3246507cf850299b780e2ab16cd8abce4360e200b4044")
+<     version("2.6.19", sha256="5499391378d6769da0b94b0e8eaea358d6c7be40673e4c97c5580c4e94bdaa24")
+<     version("2.6.11", sha256="988eb6bd2124174e0956b4415edcc3671ac87896a64852e9e99d8628c4fa1334")
+<     version("2.6.10", sha256="44ee19429ec3c55be54582fb9411b68ebba9c90ae3ee8b770faa702f599a3f49")
+<     version("2.6.9", sha256="46dadbba0acdf19644496fd7c3eff2a046f745e9fe9fe68f42b7c499df293596")
+<     version("2.6.8", sha256="9a60403d06463f34c988d45a3049b1e09409c4a44ac08f45da920dc2eab26ff5")
+<     version("2.6.7", sha256="365949d19faf14200b4fa0f80dd881fbd4bbcf7f4699bab5e43358119d4109b8")
+<     version("2.6.6", sha256="fc04576e5ae82740f6a1797ebeeac6855338eb028a43b178f3f66183f4bb583e")
+<     version("2.5.16", sha256="5455f58042c7b84826fc72e77d21e9f0a5ec7efe5f40435571c52fb4c0e226fd")
+<     version("2.3.10", sha256="4da290f5fc3c9d4344792176e19e1d3278f87a634ebc1535bbd9a91aae2bbf9b")
+<     version("2.3.9", sha256="1acdff224f32c3eb5780aed13cf0f23b431623a0ebc8a74210271b75b9f2f574")
+<     version("2.5.4", sha256="48bf6807cb8b3092677768f763c1f18940d852d685424a1ea386acf7f1606608")
+<     version("2.5.12", sha256="e8a8af62e5e9917e51c88b2cda889c2a195dfb7911e09c28aeaf10f54e8abf49")
+<     version("2.5.14", sha256="66ab9126bb3cb1f8d8dafb69568569d8856ab6770322efc7c5064252f27a8fda")
+<     version("2.5.2", git=git_base, tag="v2_5_2", get_full_repo=True)
+---
+>     version("2.7", sha256="5a4f7c94191bb657415a51c6d73d789f820999b68c8d9c65ec74c845321aa7e2")
+>     version("2.6.20", sha256="cd473b3331474a75f87c3251e08c69bb3b0a7c98f53171c5a380049bca1a0cc2")
+>     version("2.6.19", sha256="8ce4cb631fb1662e3146a1877e92677859cb2196cf90504e7b4a55811cc45b4b")
+>     version("2.6.18", sha256="c8d353ea648177802b2c2e87213a4b5cbffa62cd6b340bc3c6d574402955791c")
+>     version("2.6.17", sha256="d4d3614122099f386d9b4e570dcd058a9d6853c96a8ec6beafcbcb8cee4ebb02")
+>     version("2.6.14", sha256="df6d78b62ba074aac84281b021037319623e2bc4a90bfb46a7129ebdf3281ec1")
+>     version("2.6.8", sha256="3dc0fca76815424a72613df68520dafc08341c9f60c80a766bda647819212d87")
+>     version("2.6.6", sha256="8ba4929ecefa5720ea999e39671a48b56a65f5f44ff99f2f473f9cd47277051e")
+Only in old_fnal_art/packages/ifdhc-config/__pycache__: package.cpython-36.pyc
+Binary files old_fnal_art/packages/ifdhc-config/__pycache__/package.cpython-39.pyc and /daq/software/ALCF_SBN_spack_recipes/fnal_art/packages/ifdhc-config/__pycache__/package.cpython-39.pyc differ
+diff -r old_fnal_art/packages/intel-tbb-oneapi/package.py /daq/software/ALCF_SBN_spack_recipes/fnal_art/packages/intel-tbb-oneapi/package.py
+5a6
+> from spack import *
+Only in old_fnal_art/packages/intel-tbb-oneapi/__pycache__: package.cpython-36.pyc
+Binary files old_fnal_art/packages/intel-tbb-oneapi/__pycache__/package.cpython-39.pyc and /daq/software/ALCF_SBN_spack_recipes/fnal_art/packages/intel-tbb-oneapi/__pycache__/package.cpython-39.pyc differ
+Only in old_fnal_art/packages: jsonnet
+Only in /daq/software/ALCF_SBN_spack_recipes/fnal_art/packages: kinkal
+Only in /daq/software/ALCF_SBN_spack_recipes/fnal_art/packages: larcv2
+Only in /daq/software/ALCF_SBN_spack_recipes/fnal_art/packages: lhapdf
+diff -r old_fnal_art/packages/libb64/package.py /daq/software/ALCF_SBN_spack_recipes/fnal_art/packages/libb64/package.py
+6a7
+> from spack import *
+Only in old_fnal_art/packages/libb64/__pycache__: package.cpython-36.pyc
+Binary files old_fnal_art/packages/libb64/__pycache__/package.cpython-39.pyc and /daq/software/ALCF_SBN_spack_recipes/fnal_art/packages/libb64/__pycache__/package.cpython-39.pyc differ
+diff -r old_fnal_art/packages/libevhtp/package.py /daq/software/ALCF_SBN_spack_recipes/fnal_art/packages/libevhtp/package.py
+5a6
+> from spack import *
+Only in old_fnal_art/packages/libevhtp/__pycache__: package.cpython-36.pyc
+Binary files old_fnal_art/packages/libevhtp/__pycache__/package.cpython-39.pyc and /daq/software/ALCF_SBN_spack_recipes/fnal_art/packages/libevhtp/__pycache__/package.cpython-39.pyc differ
+diff -r old_fnal_art/packages/libpqxx/package.py /daq/software/ALCF_SBN_spack_recipes/fnal_art/packages/libpqxx/package.py
+6a7
+> from spack import *
+20,30d20
+<     version("7.10.0", sha256="d588bca36357eda8bcafd5bc1f95df1afe613fdc70c80e426fc89eecb828fc3e")
+<     version("7.9.2", sha256="e37d5774c39f6c802e32d7f418e88b8e530404fb54758516e884fc0ebdee6da4")
+<     version("7.9.1", sha256="4fafd63009b1d6c2b64b8c184c04ae4d1f7aa99d8585154832d28012bae5b0b6")
+<     version("7.9.0", sha256="a1fafd5f6455f6c66241fca1f35f5cb603251580b99f9a0cf1b5d0a586006f16")
+<     version("7.8.1", sha256="0f4c0762de45a415c9fd7357ce508666fa88b9a4a463f5fb76c235bc80dd6a84")
+<     version("7.8.0", sha256="bc471d8d34588f820f38e19e1cc217f399212eef900416cf12f90fab293628af")
+<     version("7.7.5", sha256="c7dc3e8fa2eee656f2b6a8179d72f15db10e97a80dc4f173f806e615ea990973")
+<     version("7.7.4", sha256="65b0a06fffd565a19edacedada1dcfa0c1ecd782cead0ee067b19e2464875c36")
+<     version("7.7.3", sha256="11e147bbe2d3024d68d29b38eab5d75899dbb6131e421a2dbf9f88bac9bf4b0d")
+<     version("7.7.2", sha256="4b7a0b67cbd75d1c31e1e8a07c942ffbe9eec4e32c29b15d71cc225dc737e243")
+<     version("7.6.0", sha256="8194ce4eff3fee5325963ccc28d3542cfaa54ba1400833d0df6948de3573c118")
+Binary files old_fnal_art/packages/libpqxx/__pycache__/package.cpython-36.pyc and /daq/software/ALCF_SBN_spack_recipes/fnal_art/packages/libpqxx/__pycache__/package.cpython-36.pyc differ
+Binary files old_fnal_art/packages/libpqxx/__pycache__/package.cpython-39.pyc and /daq/software/ALCF_SBN_spack_recipes/fnal_art/packages/libpqxx/__pycache__/package.cpython-39.pyc differ
+diff -r old_fnal_art/packages/libwda/package.py /daq/software/ALCF_SBN_spack_recipes/fnal_art/packages/libwda/package.py
+7a8
+> from spack import *
+14,17c15,17
+<     homepage = "https://github.com/fnal-fife/libwda"
+<     git_base = "https://github.com/fnal-fife/libwda.git"
+<     url = "https://github.com/fnal-fife/libwda/archive/refs/tags/v2_6_14.tar.gz"
+<     list_url = "https://github.com/fnal-fife/libwda/tags"
+---
+>     homepage = "https://cdcvs.fnal.gov/redmine/projects/libwda"
+>     git_base = "https://cdcvs.fnal.gov/projects/ifdhc-libwda"
+>     url = "https://cdcvs.fnal.gov/cgi-bin/git_archive.cgi/cvs/projects/libwda.v2_22_2.tbz2"
+19c19
+<     version("2.30.0", sha256="ace33ae85cd418d37ad882ab38a0ce76397a65ae6f9a5d229707a06e62bf5204")
+---
+>     version("2.30.0", sha256="016fe0f12f1ded114b0ab09d1bdd0ea2374faff47b1226ee5035453fdc750329")
+52c52
+<         url = "https://github.com/fnal-fife/libwda/archive/refs/tags/v{0}.tar.gz"
+---
+>         url = "https://cdcvs.fnal.gov/cgi-bin/git_archive.cgi/cvs/projects/{0}.v{1}.tbz2"
+Only in old_fnal_art/packages/libwda/__pycache__: package.cpython-36.pyc
+Binary files old_fnal_art/packages/libwda/__pycache__/package.cpython-39.pyc and /daq/software/ALCF_SBN_spack_recipes/fnal_art/packages/libwda/__pycache__/package.cpython-39.pyc differ
+Only in /daq/software/ALCF_SBN_spack_recipes/fnal_art/packages: libxml2
+Only in /daq/software/ALCF_SBN_spack_recipes/fnal_art/packages: llvm
+diff -r old_fnal_art/packages/log4cpp/package.py /daq/software/ALCF_SBN_spack_recipes/fnal_art/packages/log4cpp/package.py
+5a6
+> from spack import *
+16c17
+<     url = "https://newcontinuum.dl.sourceforge.net/project/log4cpp/log4cpp-1.1.x%20%28new%29/log4cpp-1.1/log4cpp-1.1.3.tar.gz"
+---
+>     url = "https://sourceforge.net/projects/log4cpp/files/log4cpp-1.1.x%20%28new%29/log4cpp-1.1/log4cpp-1.1.3.tar.gz"
+Only in old_fnal_art/packages/log4cpp/__pycache__: package.cpython-36.pyc
+Binary files old_fnal_art/packages/log4cpp/__pycache__/package.cpython-39.pyc and /daq/software/ALCF_SBN_spack_recipes/fnal_art/packages/log4cpp/__pycache__/package.cpython-39.pyc differ
+diff -r old_fnal_art/packages/marley/package.py /daq/software/ALCF_SBN_spack_recipes/fnal_art/packages/marley/package.py
+5a6
+> from spack import *
+9c10
+< class Marley(MakefilePackage):
+---
+> class Marley(Package):
+13c14
+<     homepage = "https://github.com/MARLEY-MC/marley"
+---
+>     homepage = "httpd://github.com/sjgardiner/marley"
+32a34
+>     depends_on("gmake")
+Only in old_fnal_art/packages/marley/__pycache__: package.cpython-36.pyc
+Binary files old_fnal_art/packages/marley/__pycache__/package.cpython-39.pyc and /daq/software/ALCF_SBN_spack_recipes/fnal_art/packages/marley/__pycache__/package.cpython-39.pyc differ
+Only in old_fnal_art/packages: meld
+Binary files old_fnal_art/packages/messagefacility/__pycache__/package.cpython-36.pyc and /daq/software/ALCF_SBN_spack_recipes/fnal_art/packages/messagefacility/__pycache__/package.cpython-36.pyc differ
+Binary files old_fnal_art/packages/messagefacility/__pycache__/package.cpython-39.pyc and /daq/software/ALCF_SBN_spack_recipes/fnal_art/packages/messagefacility/__pycache__/package.cpython-39.pyc differ
+Only in old_fnal_art/packages/muse-externals/__pycache__: package.cpython-36.pyc
+Binary files old_fnal_art/packages/muse-externals/__pycache__/package.cpython-39.pyc and /daq/software/ALCF_SBN_spack_recipes/fnal_art/packages/muse-externals/__pycache__/package.cpython-39.pyc differ
+diff -r old_fnal_art/packages/nucondb/package.py /daq/software/ALCF_SBN_spack_recipes/fnal_art/packages/nucondb/package.py
+12,20c12,26
+<     homepage = "https://cdcvs.fnal.gov/redmine/projects/nucondb"
+<     url = "https://cdcvs.fnal.gov/cgi-bin/git_archive.cgi/cvs/projects/nucondb.v2_2_10.tbz2"
+<     git = "https://cdcvs.fnal.gov/projects/ifdhc-nucondb"
+< 
+<     version("2.6.1", sha256="fbf59259e8cd75334b4ad17d3da46519d35c5c81ccf55b8df2d19f664fe016b9")
+<     version("2.5.23", sha256="30399133b64548affd3522eb16346a1fc85f36ba4300fce51730a208a8022f24")
+<     version("2.5.22", sha256="bd468d5b64909e3951342eacef30440e1eaca5d32add991fe6cc36b46f1c5f65")
+<     version("2.5.17", sha256="5b9bd0e8e6359edb594416847a946214376f013afedebbd861ebd6556d45823f")
+<     version("2.5.16", sha256="2de3a199407a378ea62f76652bc0945065d6636c7f7a02e5fafa9667f4ae833a")
+---
+>     homepage = "https://github.com/fnal-fife/nucondb"
+>     git_base = "https://github.com/fnal-fife/nucondb.git"
+>     url = "https://github.com/fnal-fife/nucondb/archive/refs/tags/v2_6_14.tar.gz"
+>     list_url = "https://github.com/fnal-fife/nucondb/tags"
+> 
+>     version("2_6_3", sha256="0b664a07b67f72bea2d7c2648553a32e4479b6044b447b720039e64c01a9b8d7")
+>     version("2_6_2", sha256="3fffd0d4291c76dbba0f94c75d678057ae12d1a36983c8cccd7098158f7b6874")
+>     version("2_6_1", sha256="0fd793361322224c74c413dc105fb53f60488a6234c5ad4f31843e6b4462d39e")
+>     version("2_6", sha256="e205a12c28466bdf32ec4373a76877e28606f6ed33f58d1d64c738ac03d232d7")
+>     version("2_5_23", sha256="eb8c0b9720ffcc0e2146ee704349f7ce41748ca91614aeb9644ec388c4f7ad4d")
+>     version("2_5_22", sha256="583917373cedce05150d892541402332795444ec019d961870807150da540079")
+>     version("2_5_21", sha256="20c19e30ac6eda4df5058d2ca6753ad6c0de25c80df495b5fa97910966af7140")
+>     version("2_5_20", sha256="1395d43c3bb954bf0982b85a1f49ee6a9454924f2d403f74a35be75c19f101c9")
+>     version("2_5_19", sha256="73d589ba9437c40e990c7b872f8ff5154e32697f9e1990d6253d898ed11b810f")
+>     version("2_5_18", sha256="f1ed5f66aa373292eb917d09885f2f2fbc41385521fb396050d441e300508f2a")
+46,49d51
+< 
+<     def url_for_version(self, version):
+<         url = "https://cdcvs.fnal.gov/cgi-bin/git_archive.cgi/cvs/projects/{0}.v{1}.tbz2"
+<         return url.format("ifdhc-" + self.name, version.underscored)
+Only in old_fnal_art/packages/nucondb/__pycache__: package.cpython-36.pyc
+Binary files old_fnal_art/packages/nucondb/__pycache__/package.cpython-39.pyc and /daq/software/ALCF_SBN_spack_recipes/fnal_art/packages/nucondb/__pycache__/package.cpython-39.pyc differ
+diff -r old_fnal_art/packages/nusystematics/package.py /daq/software/ALCF_SBN_spack_recipes/fnal_art/packages/nusystematics/package.py
+27d26
+<     """FIXME: Put a proper description of your package here."""
+29,30d27
+<     # FIXME: Add a proper url for your package's homepage here.
+<     homepage = "https://www.example.com"
+33,38d29
+<     # FIXME: Add a list of GitHub accounts to
+<     # notify when the package is updated.
+<     # maintainers("github_user1", "github_user2")
+< 
+<     # FIXME: Add the SPDX identifier of the project's license below.
+<     # See https://spdx.org/licenses/ for a list.
+40a32,34
+>     version("1.05.07", sha256="8d273475c43cd42cb62f5a66f6fd6bcd90c6ad3cb9b8592c0ca24982356a2db5")
+>     version("1_05_07", sha256="8d273475c43cd42cb62f5a66f6fd6bcd90c6ad3cb9b8592c0ca24982356a2db5")
+>     version("1_05_02", sha256="c4f2a7ed65d814ae3e20eae3832eb9534618ff0648fa0b57d5012df629bd0bbd")
+47a42,46
+> 
+>     def url_for_version(self, version):
+>         url = "https://github.com/LArSoft/{0}/archive/v{1}.tar.gz"
+>         print("url_for_version: ",url.format(self.name, version.underscored))
+>         return url.format(self.name, version.underscored)
+Only in old_fnal_art/packages/nusystematics/__pycache__: package.cpython-36.pyc
+Binary files old_fnal_art/packages/nusystematics/__pycache__/package.cpython-39.pyc and /daq/software/ALCF_SBN_spack_recipes/fnal_art/packages/nusystematics/__pycache__/package.cpython-39.pyc differ
+diff -r old_fnal_art/packages/pandora/package.py /daq/software/ALCF_SBN_spack_recipes/fnal_art/packages/pandora/package.py
+8a9
+> from spack import *
+48d48
+< 
+58a59
+>         print("PATCHED:", self.spec["eigen"].version)
+91c92
+<                    gd = "PandoraSDK"
+---
+>                    gd = "PandoraSDK-v03-04-01"
+Only in old_fnal_art/packages/pandora/__pycache__: package.cpython-36.pyc
+Binary files old_fnal_art/packages/pandora/__pycache__/package.cpython-39.pyc and /daq/software/ALCF_SBN_spack_recipes/fnal_art/packages/pandora/__pycache__/package.cpython-39.pyc differ
+diff -r old_fnal_art/packages/pdfsets/package.py /daq/software/ALCF_SBN_spack_recipes/fnal_art/packages/pdfsets/package.py
+5a6
+> from spack import *
+Binary files old_fnal_art/packages/pdfsets/__pycache__/package.cpython-36.pyc and /daq/software/ALCF_SBN_spack_recipes/fnal_art/packages/pdfsets/__pycache__/package.cpython-36.pyc differ
+Binary files old_fnal_art/packages/pdfsets/__pycache__/package.cpython-39.pyc and /daq/software/ALCF_SBN_spack_recipes/fnal_art/packages/pdfsets/__pycache__/package.cpython-39.pyc differ
+Only in /daq/software/ALCF_SBN_spack_recipes/fnal_art/packages: postgresql
+diff -r old_fnal_art/packages/ppfx/package.py /daq/software/ALCF_SBN_spack_recipes/fnal_art/packages/ppfx/package.py
+24a25,26
+>     version("02.20.05", sha256="0ed800f6f358d960f5586bd2b73441660dfa266a59daaf18c2e8fbc24a13cedb") # FIXME
+>     version("02.20.03", sha256="2a6f19f615da6d18eb48bbebdeb4785c2663e3255ffc7a8fe8f05a822c1b7c0a")
+Only in old_fnal_art/packages/ppfx/__pycache__: package.cpython-36.pyc
+Binary files old_fnal_art/packages/ppfx/__pycache__/package.cpython-39.pyc and /daq/software/ALCF_SBN_spack_recipes/fnal_art/packages/ppfx/__pycache__/package.cpython-39.pyc differ
+diff -r old_fnal_art/packages/prometheus-cpp/package.py /daq/software/ALCF_SBN_spack_recipes/fnal_art/packages/prometheus-cpp/package.py
+22a23
+> from spack import *
+Only in old_fnal_art/packages/prometheus-cpp/__pycache__: package.cpython-36.pyc
+Binary files old_fnal_art/packages/prometheus-cpp/__pycache__/package.cpython-39.pyc and /daq/software/ALCF_SBN_spack_recipes/fnal_art/packages/prometheus-cpp/__pycache__/package.cpython-39.pyc differ
+diff -r old_fnal_art/packages/py-dash/package.py /daq/software/ALCF_SBN_spack_recipes/fnal_art/packages/py-dash/package.py
+5a6
+> from spack import *
+Only in old_fnal_art/packages/py-dash/__pycache__: package.cpython-36.pyc
+Binary files old_fnal_art/packages/py-dash/__pycache__/package.cpython-39.pyc and /daq/software/ALCF_SBN_spack_recipes/fnal_art/packages/py-dash/__pycache__/package.cpython-39.pyc differ
+Only in old_fnal_art/packages: py-fhicl-py
+diff -r old_fnal_art/packages/py-geventhttpclient/package.py /daq/software/ALCF_SBN_spack_recipes/fnal_art/packages/py-geventhttpclient/package.py
+22a23
+> from spack import *
+Only in old_fnal_art/packages/py-geventhttpclient/__pycache__: package.cpython-36.pyc
+Binary files old_fnal_art/packages/py-geventhttpclient/__pycache__/package.cpython-39.pyc and /daq/software/ALCF_SBN_spack_recipes/fnal_art/packages/py-geventhttpclient/__pycache__/package.cpython-39.pyc differ
+diff -r old_fnal_art/packages/py-grpcio-tools/package.py /daq/software/ALCF_SBN_spack_recipes/fnal_art/packages/py-grpcio-tools/package.py
+8d7
+< 
+14c13
+<     version("1.59.0", sha256="aa4018f2d8662ac4d9830445d3d253a11b3e096e8afe20865547137aa1160e93")
+---
+>     version("1.59.0", sha256="aa4018f2d8662ac4d9830445d3d253a11b3e096e8afe20865547137aa1160e93") 
+Only in old_fnal_art/packages/py-grpcio-tools/__pycache__: package.cpython-36.pyc
+Binary files old_fnal_art/packages/py-grpcio-tools/__pycache__/package.cpython-39.pyc and /daq/software/ALCF_SBN_spack_recipes/fnal_art/packages/py-grpcio-tools/__pycache__/package.cpython-39.pyc differ
+diff -r old_fnal_art/packages/py-ipywe/package.py /daq/software/ALCF_SBN_spack_recipes/fnal_art/packages/py-ipywe/package.py
+6a7
+> from spack import *
+Only in old_fnal_art/packages/py-ipywe/__pycache__: package.cpython-36.pyc
+Binary files old_fnal_art/packages/py-ipywe/__pycache__/package.cpython-39.pyc and /daq/software/ALCF_SBN_spack_recipes/fnal_art/packages/py-ipywe/__pycache__/package.cpython-39.pyc differ
+Only in old_fnal_art/packages/py-jltheme/__pycache__: package.cpython-36.pyc
+Binary files old_fnal_art/packages/py-jltheme/__pycache__/package.cpython-39.pyc and /daq/software/ALCF_SBN_spack_recipes/fnal_art/packages/py-jltheme/__pycache__/package.cpython-39.pyc differ
+diff -r old_fnal_art/packages/py-julia/package.py /daq/software/ALCF_SBN_spack_recipes/fnal_art/packages/py-julia/package.py
+6a7
+> from spack import *
+Only in old_fnal_art/packages/py-julia/__pycache__: package.cpython-36.pyc
+Binary files old_fnal_art/packages/py-julia/__pycache__/package.cpython-39.pyc and /daq/software/ALCF_SBN_spack_recipes/fnal_art/packages/py-julia/__pycache__/package.cpython-39.pyc differ
+diff -r old_fnal_art/packages/py-jupyter-full-width/package.py /daq/software/ALCF_SBN_spack_recipes/fnal_art/packages/py-jupyter-full-width/package.py
+22a23
+> from spack import *
+Only in old_fnal_art/packages/py-jupyter-full-width/__pycache__: package.cpython-36.pyc
+Binary files old_fnal_art/packages/py-jupyter-full-width/__pycache__/package.cpython-39.pyc and /daq/software/ALCF_SBN_spack_recipes/fnal_art/packages/py-jupyter-full-width/__pycache__/package.cpython-39.pyc differ
+diff -r old_fnal_art/packages/py-jupyterlab-launcher/package.py /daq/software/ALCF_SBN_spack_recipes/fnal_art/packages/py-jupyterlab-launcher/package.py
+22a23
+> from spack import *
+Only in old_fnal_art/packages/py-jupyterlab-launcher/__pycache__: package.cpython-36.pyc
+Binary files old_fnal_art/packages/py-jupyterlab-launcher/__pycache__/package.cpython-39.pyc and /daq/software/ALCF_SBN_spack_recipes/fnal_art/packages/py-jupyterlab-launcher/__pycache__/package.cpython-39.pyc differ
+diff -r old_fnal_art/packages/py-jupyterlab-templates/package.py /daq/software/ALCF_SBN_spack_recipes/fnal_art/packages/py-jupyterlab-templates/package.py
+6a7
+> from spack import *
+Only in old_fnal_art/packages/py-jupyterlab-templates/__pycache__: package.cpython-36.pyc
+Binary files old_fnal_art/packages/py-jupyterlab-templates/__pycache__/package.cpython-39.pyc and /daq/software/ALCF_SBN_spack_recipes/fnal_art/packages/py-jupyterlab-templates/__pycache__/package.cpython-39.pyc differ
+diff -r old_fnal_art/packages/py-jupyterlab-widgets/package.py /daq/software/ALCF_SBN_spack_recipes/fnal_art/packages/py-jupyterlab-widgets/package.py
+6a7
+> from spack import *
+Only in old_fnal_art/packages/py-jupyterlab-widgets/__pycache__: package.cpython-36.pyc
+Binary files old_fnal_art/packages/py-jupyterlab-widgets/__pycache__/package.cpython-39.pyc and /daq/software/ALCF_SBN_spack_recipes/fnal_art/packages/py-jupyterlab-widgets/__pycache__/package.cpython-39.pyc differ
+Only in /daq/software/ALCF_SBN_spack_recipes/fnal_art/packages: py-larcv
+diff -r old_fnal_art/packages/py-matplotlylib/package.py /daq/software/ALCF_SBN_spack_recipes/fnal_art/packages/py-matplotlylib/package.py
+6a7
+> from spack import *
+Only in old_fnal_art/packages/py-matplotlylib/__pycache__: package.cpython-36.pyc
+Binary files old_fnal_art/packages/py-matplotlylib/__pycache__/package.cpython-39.pyc and /daq/software/ALCF_SBN_spack_recipes/fnal_art/packages/py-matplotlylib/__pycache__/package.cpython-39.pyc differ
+diff -r old_fnal_art/packages/py-plotly-scientific-plots/package.py /daq/software/ALCF_SBN_spack_recipes/fnal_art/packages/py-plotly-scientific-plots/package.py
+6a7
+> from spack import *
+Only in old_fnal_art/packages/py-plotly-scientific-plots/__pycache__: package.cpython-36.pyc
+Binary files old_fnal_art/packages/py-plotly-scientific-plots/__pycache__/package.cpython-39.pyc and /daq/software/ALCF_SBN_spack_recipes/fnal_art/packages/py-plotly-scientific-plots/__pycache__/package.cpython-39.pyc differ
+diff -r old_fnal_art/packages/py-pygccxml/package.py /daq/software/ALCF_SBN_spack_recipes/fnal_art/packages/py-pygccxml/package.py
+22a23
+> from spack import *
+Only in old_fnal_art/packages/py-pygccxml/__pycache__: package.cpython-36.pyc
+Binary files old_fnal_art/packages/py-pygccxml/__pycache__/package.cpython-39.pyc and /daq/software/ALCF_SBN_spack_recipes/fnal_art/packages/py-pygccxml/__pycache__/package.cpython-39.pyc differ
+diff -r old_fnal_art/packages/py-pyinotify/package.py /daq/software/ALCF_SBN_spack_recipes/fnal_art/packages/py-pyinotify/package.py
+5a6
+> from spack import *
+Only in old_fnal_art/packages/py-pyinotify/__pycache__: package.cpython-36.pyc
+Binary files old_fnal_art/packages/py-pyinotify/__pycache__/package.cpython-39.pyc and /daq/software/ALCF_SBN_spack_recipes/fnal_art/packages/py-pyinotify/__pycache__/package.cpython-39.pyc differ
+diff -r old_fnal_art/packages/py-rplotmaker/package.py /daq/software/ALCF_SBN_spack_recipes/fnal_art/packages/py-rplotmaker/package.py
+6a7
+> from spack import *
+Only in old_fnal_art/packages/py-rplotmaker/__pycache__: package.cpython-36.pyc
+Binary files old_fnal_art/packages/py-rplotmaker/__pycache__/package.cpython-39.pyc and /daq/software/ALCF_SBN_spack_recipes/fnal_art/packages/py-rplotmaker/__pycache__/package.cpython-39.pyc differ
+diff -r old_fnal_art/packages/py-srproxy/package.py /daq/software/ALCF_SBN_spack_recipes/fnal_art/packages/py-srproxy/package.py
+5a6
+> from spack import *
+13c14
+<     url = "https://github.com/cafana/SRProxy/archive/v00.44.tar.gz"
+---
+>     url = "https://github.com/cafana/SRProxy/archive/v00.16.tar.gz"
+15,16d15
+< #    version("00.45", sha256="be614ac5637796f0a16f3480caacfd647abcfa8992a47556f63a5aefe4f2f85e")
+<     version("00.44", sha256="8bdefc5031033c847f2300aebd853b4ee71811fd63d4d360e85e58d41f956381")
+Only in old_fnal_art/packages/py-srproxy/__pycache__: package.cpython-36.pyc
+Binary files old_fnal_art/packages/py-srproxy/__pycache__/package.cpython-39.pyc and /daq/software/ALCF_SBN_spack_recipes/fnal_art/packages/py-srproxy/__pycache__/package.cpython-39.pyc differ
+Only in old_fnal_art/packages/rstartree/__pycache__: package.cpython-36.pyc
+Binary files old_fnal_art/packages/rstartree/__pycache__/package.cpython-39.pyc and /daq/software/ALCF_SBN_spack_recipes/fnal_art/packages/rstartree/__pycache__/package.cpython-39.pyc differ
+Only in /daq/software/ALCF_SBN_spack_recipes/fnal_art/packages: sam-web-client
+Only in /daq/software/ALCF_SBN_spack_recipes/fnal_art/packages: sbnalg
+Only in /daq/software/ALCF_SBN_spack_recipes/fnal_art/packages/sbnanaobj: justin_ml.patch
+Only in /daq/software/ALCF_SBN_spack_recipes/fnal_art/packages/sbnanaobj: Nate_ml.patch
+diff -r old_fnal_art/packages/sbnanaobj/package.py /daq/software/ALCF_SBN_spack_recipes/fnal_art/packages/sbnanaobj/package.py
+22a23
+> from spack import *
+31a33,36
+>     version("10.00.04", sha256="7f53cfedfba6e864e438a949ad6c314faf627435f98984786b7713d010579eea") # FIXME
+>     version("10.00.00", sha256="268492c6394a8090e1ac93bc5a47abcaac8b808d972d1bb57de25d3887802b28")
+>     version("09.23.02.01", sha256="88bf520e81e96311e62487efa4b01baed07e17ed4ab097ed31eaea792db0fea9")
+>     version("09.23.02", sha256="be2ea1ab0f6e99e30608b41b851694d7e14e1d30abbd66f18d11956c78700bbf")
+49a55,61
+>     variant("ml", default=False,
+>         description="Enable features for sbn-ml-cafmaker.",
+>     )
+> 
+>     patch("justin_ml.patch", when="+ml")
+>     patch("Nate_ml.patch", when="+ml")
+>     patch("v09_23_02.patch", when="@09.23.02")
+60a73,78
+> 
+>     def patch(self):
+>         filter_file('/sbnanaobj/sbnanaobj/StandardRecord/','/sbnanaobj/StandardRecord/',
+>                     'sbnanaobj/StandardRecord/Flat/CMakeLists.txt')
+>         filter_file('/sbnanaobj/sbnanaobj/StandardRecord/','/sbnanaobj/StandardRecord/',
+>                      'sbnanaobj/StandardRecord/Proxy/CMakeLists.txt')
+Only in old_fnal_art/packages/sbnanaobj/__pycache__: package.cpython-36.pyc
+Binary files old_fnal_art/packages/sbnanaobj/__pycache__/package.cpython-39.pyc and /daq/software/ALCF_SBN_spack_recipes/fnal_art/packages/sbnanaobj/__pycache__/package.cpython-39.pyc differ
+Only in /daq/software/ALCF_SBN_spack_recipes/fnal_art/packages/sbnanaobj: v09_23_02.patch
+diff -r old_fnal_art/packages/sbncode/package.py /daq/software/ALCF_SBN_spack_recipes/fnal_art/packages/sbncode/package.py
+9c9
+< import spack.util.web
+---
+> from spack import *
+34d33
+<     homepage = "https://cdcvs.fnal.gov/redmine/projects/sbncode"
+36,37c35,47
+<     git_base = "https://github.com/SBNSoftware/sbncode.git"
+<     list_url = "https://api.github.com/repos/SBNSoftware/sbncode/tags"
+---
+>     git = "https://github.com/SBNSoftware/sbncode.git"
+>     #git_base = "https://github.com/SBNSoftware/sbncode.git"
+>     #list_url = "https://api.github.com/repos/SBNSoftware/sbncode/tags"
+> 
+>     #version("develop", branch="develop", git=git_base, get_full_repo=True)
+>     version("v10_06_00_01", commit="fb929f3d9ac910bec5da48ca8adcc1bad0412eb6", submodules=True)
+>     version("v10_04_07", commit="412514c73b41c88fcbd9ffcf0632ed186703a2d3", submodules=True)
+>     version("v10_04_06_p01",commit="41ef8493069b0f07287e43ed66873484c0a203d5", submodules=True)
+>     version("v10_04_04",commit="d49df6743d95631d6c9edc2ae01ee3f3e3a5c01f", submodules=True)
+>     version("v09_93_01_p01", commit="b67723df67c57e7325c4baf3825760c6683f1c7a", submodules=True)
+>     version("v09_93_01_p02", commit="45baa22ccf40934ca65f5c5229df4c52ad1f7fbb", submodules=True)
+>     version("09.91.02.01", commit="bf374b540b658d2d175e048da6f43ce2e4d9c509", submodules=True)
+>     version("09.91.01", commit="f3da8986c43f9d9d7e674b9ab7866da314db5745", submodules=True)
+39d48
+<     version("develop", branch="develop", git=git_base, get_full_repo=True)
+48a58
+>     patch("spack.patch")
+52a63,67
+>     patch("v09_91_01.patch", when="@09.91.01")
+>     #patch("v09_91_02_01.patch", when="@09.91.02.01")
+>     #patch("v09_91_02_01.patch", when="@v09_93_01_p01")
+>     #patch("v09_91_02_01.patch", when="@v09_93_01_p02")
+>     #patch("v09_91_02_01.patch", when="@09.93.01")
+92a108,111
+>     depends_on("larrecodnn")# added -> should inherit py-tensorflow from this!
+>     depends_on("larsoft")# added
+>     depends_on("larsoft@09.91.02", when="@09.91.02.01")# added
+>     depends_on("larg4")# added
+96a116
+>     #depends_on("py-tensorflow")
+97a118
+>     depends_on("larreco@09.25.04", when="@09.91.02.01")
+112a134
+>     depends_on("sbnobj@09.19.04", when="@09.91.02.01")
+122a145,153
+>     # depends_on("py-larcv")
+>     depends_on("larcv2")
+>     depends_on("nusystematics")
+>     depends_on("protobuf")
+>     depends_on("nusimdata")
+>     depends_on("sbndata")
+> 
+>     depends_on("sbnalg", when="@v10_04_07:")
+> 
+129d159
+<         # url = 'https://cdcvs.fnal.gov/cgi-bin/git_archive.cgi/cvs/projects/{0}.v{1}.tbz2'
+130a161
+>         print("url for version: ", url.format(self.name, version.underscored))
+133,148c164,178
+<     def fetch_remote_versions(self, concurrency=None):
+<         return dict(
+<             map(
+<                 lambda v: (v.dotted, self.url_for_version(v)),
+<                 [
+<                     Version(d["name"][1:])
+<                     for d in sjson.load(
+<                         spack.util.web.read_from_url(
+<                             self.list_url, accept_content_type="application/json"
+<                         )[2]
+<                     )
+<                     if d["name"].startswith("v")
+<                 ],
+<             )
+<         )
+< 
+---
+>     #def fetch_remote_versions(self, concurrency=None):
+>     #    return dict(
+>     #        map(
+>     #            lambda v: (v.dotted, self.url_for_version(v)),
+>     #            [
+>     #                Version(d["name"][1:])
+>     #                for d in sjson.load(
+>     #                    spack.util.web.read_from_url(
+>     #                        self.list_url, accept_content_type="application/json"
+>     #                    )[2]
+>     #                )
+>     #                if d["name"].startswith("v")
+>     #            ],
+>     #        )
+>     #    )
+152a183,185
+>             "-DCMAKE_PREFIX_PATH={0}/lib/python{1}/site-packages/torch".format(
+>                 self.spec["py-torch"].prefix, self.spec["python"].version.up_to(2)
+>             ),
+154c187,208
+<             "-DIGNORE_ABSOLUTE_TRANSITIVE_DEPENDENCIES=1",
+---
+>             #"-DIGNORE_ABSOLUTE_TRANSITIVE_DEPENDENCIES=1",
+>             "-DCMAKE_VERBOSE_MAKEFILE=1",
+>             "-DCMAKE_RULE_MESSAGES=1",
+>             "-DCMAKE_EXPORT_COMPILE_COMMANDS=1",
+>             self.define(
+>                 "CMAKE_PREFIX_PATH",
+>                 join_path(
+>                 self.spec["py-tensorflow"].prefix.lib,
+>                 "python{0}/site-packages/tensorflow".format(
+>                     self.spec["python"].version.up_to(2)
+>                 ),
+>               )
+>             ),
+>             self.define(
+>                 "TensorFlow_LIBRARIES",
+>                 join_path(
+>                 self.spec["py-tensorflow"].prefix.lib,
+>                 "python{0}/site-packages/tensorflow".format(
+>                     self.spec["python"].version.up_to(2)
+>                 ),
+>               ),
+>             ),
+158,163d211
+<     @property
+<     def cmake_prefix_paths(self):
+<         return "{0}/lib/python{1}/site-packages/torch".format(
+<                 self.spec["py-torch"].prefix, self.spec["python"].version.up_to(2)
+<             )
+< 
+165a214,215
+>         spack_env.prepend_path("ROOT_X3d", self.spec["root"].prefix.include)
+>         #spack_env.prepend_path("LD_LIBRARY_PATH", self.spec["larcv2"].prefix.lib)
+171,175c221,229
+<         for d in self.spec.traverse(
+<             root=False, cover="nodes", order="post", deptype=("link"), direction="children"
+<         ):
+<             spack_env.prepend_path("ROOT_INCLUDE_PATH", str(self.spec[d.name].prefix.include))
+<         spack_env.prepend_path("ROOT_INCLUDE_PATH", self.prefix.include)
+---
+>         #for d in self.spec.traverse(
+>         #    root=False, cover="nodes", order="post", deptype=("link"), direction="children"
+>         #):
+>         #    spack_env.prepend_path("ROOT_INCLUDE_PATH", str(self.spec[d.name].prefix.include))
+>         #spack_env.prepend_path("ROOT_INCLUDE_PATH", self.prefix.include)
+>         #spack_env.prepend_path("ROOT_LIBRARY_PATH", self.spec["root"].prefix.lib.root)
+>         #spack_env.prepend_path("ROOT_LIBRARY_PATH", self.spec["nusimdata"].prefix.lib.nusimdata)
+>         #spack_env.prepend_path("ROOT_INCLUDE_PATH", self.spec["nusimdata"].prefix.include.nusimdata)
+> 
+177a232,240
+>         # Larcv modules
+>         #spack_env.prepend_path("LARCV_LIBDIR", self.spec["larcv2"].prefix.lib)
+>         #spack_env.prepend_path("LARCV_INCDIR", self.spec["larcv2"].prefix.include)
+>         spack_env.set(
+>                 "Torch_DIR",
+>                 "{0}/lib/python{1}/site-packages/torch/share/cmake/Torch".format(
+>                     self.spec["py-torch"].prefix, self.spec["python"].version.up_to(2)
+>                 ),
+>             )
+181a245
+>         run_env.prepend_path("LD_LIBRARY_PATH", self.spec["python"].prefix.lib)
+187,191c251,258
+<         for d in self.spec.traverse(
+<             root=False, cover="nodes", order="post", deptype=("link"), direction="children"
+<         ):
+<             run_env.prepend_path("ROOT_INCLUDE_PATH", str(self.spec[d.name].prefix.include))
+<         run_env.prepend_path("ROOT_INCLUDE_PATH", self.prefix.include)
+---
+>         #for d in self.spec.traverse(
+>         #    root=False, cover="nodes", order="post", deptype=("link"), direction="children"
+>         #):
+>         #    run_env.prepend_path("ROOT_INCLUDE_PATH", str(self.spec[d.name].prefix.include))
+>         #    run_env.prepend_path("ROOT_INCLUDE_PATH", self.prefix.include)
+>         #    run_env.prepend_path("ROOT_LIBRARY_PATH", self.spec["root"].prefix.lib.root)
+>         #    # run_env.prepend_path("ROOT_LIBRARY_PATH", self.spec["nusimdata"].prefix.lib.nusimdata)
+>         #    # run_env.prepend_path("ROOT_INCLUDE_PATH", self.spec["nusimdata"].prefix.include.nusimdata)
+193a261,268
+>         # Larcv modules
+>         #run_env.prepend_path("LARCV_LIBDIR", self.spec["larcv2"].prefix.lib)
+>         #run_env.prepend_path("LARCV_INCDIR", self.spec["larcv2"].prefix.include)
+>         # fcl file prefix
+>         run_env.prepend_path("FHICL_FILE_PATH", self.prefix.fcl)
+>         run_env.prepend_path("FHICL_INCLUDE_PATH", self.prefix.fcl)
+>         run_env.prepend_path("ROOT_INCLUDE_PATH", self.spec['artdaq-core'].prefix.include)
+>         run_env.prepend_path("ROOT_LIBRARY_PATH", self.spec['artdaq-core'].prefix.lib)
+203a279,281
+>         spack_env.prepend_path("ROOT_LIBRARY_PATH", self.spec["root"].prefix.lib.root)
+>         # spack_env.prepend_path("ROOT_LIBRARY_PATH", self.spec["nusimdata"].prefix.lib.nusimdata)
+>         # spack_env.prepend_path("ROOT_INCLUDE_PATH", self.spec["nusimdata"].prefix.include.nusimdata)
+205a284,286
+>         # Larcv modules
+>         #spack_env.prepend_path("LARCV_LIBDIR", self.spec["larcv2"].prefix.lib)
+>         #spack_env.prepend_path("LARCV_INCDIR", self.spec["larcv2"].prefix.include)
+Only in old_fnal_art/packages/sbncode/__pycache__: package.cpython-36.pyc
+Binary files old_fnal_art/packages/sbncode/__pycache__/package.cpython-39.pyc and /daq/software/ALCF_SBN_spack_recipes/fnal_art/packages/sbncode/__pycache__/package.cpython-39.pyc differ
+Only in /daq/software/ALCF_SBN_spack_recipes/fnal_art/packages/sbncode: spack.patch
+Only in /daq/software/ALCF_SBN_spack_recipes/fnal_art/packages/sbncode: v09_91_01.patch
+Only in /daq/software/ALCF_SBN_spack_recipes/fnal_art/packages/sbncode: v09_91_02_01.patch
+diff -r old_fnal_art/packages/sbndaq/package.py /daq/software/ALCF_SBN_spack_recipes/fnal_art/packages/sbndaq/package.py
+7d6
+< import spack.util.web
+9d7
+< 
+Binary files old_fnal_art/packages/sbndaq/__pycache__/package.cpython-36.pyc and /daq/software/ALCF_SBN_spack_recipes/fnal_art/packages/sbndaq/__pycache__/package.cpython-36.pyc differ
+Binary files old_fnal_art/packages/sbndaq/__pycache__/package.cpython-39.pyc and /daq/software/ALCF_SBN_spack_recipes/fnal_art/packages/sbndaq/__pycache__/package.cpython-39.pyc differ
+diff -r old_fnal_art/packages/sbndaq-artdaq/package.py /daq/software/ALCF_SBN_spack_recipes/fnal_art/packages/sbndaq-artdaq/package.py
+7d6
+< import spack.util.web
+9d7
+< 
+Binary files old_fnal_art/packages/sbndaq-artdaq/__pycache__/package.cpython-36.pyc and /daq/software/ALCF_SBN_spack_recipes/fnal_art/packages/sbndaq-artdaq/__pycache__/package.cpython-36.pyc differ
+Binary files old_fnal_art/packages/sbndaq-artdaq/__pycache__/package.cpython-39.pyc and /daq/software/ALCF_SBN_spack_recipes/fnal_art/packages/sbndaq-artdaq/__pycache__/package.cpython-39.pyc differ
+diff -r old_fnal_art/packages/sbndaq-artdaq-core/package.py /daq/software/ALCF_SBN_spack_recipes/fnal_art/packages/sbndaq-artdaq-core/package.py
+7c7
+< import spack.util.web
+---
+> from spack import *
+20a21,26
+>     version("1.10.06", sha256="45a0d2fe62226c2111992bd0b0c020b3dcdd406a3fdf13db6bdc0fb1a1e3ee40") # FIXME
+>     version("1.10.04", sha256="16d537f75e390a4f101f08c22181fb9fffcd5e2d282cd39865b86c9327f3596d") # FIXME
+>     version("1.09.02of1", sha256="cf38ad0bc0f3dc80fdca936b94b5e9f314ad235749632cd02cdc330397e66e97")
+>     version("1.10.03", sha256="de72fba489e5f15b89843a86d60e3fd75d5fd18993dc353017cc657be602323b")
+>     version("1.10.02", sha256="8ea8b5d545bd42eb0547e3745b6b076236205d771e9a8e95ba1649df5222f88b")
+>     version("1.10.01", sha256="7dd4d1240f3fcde891a2431b1fd1376385dc78ead8cf131443c5a57eef606912")
+Binary files old_fnal_art/packages/sbndaq-artdaq-core/__pycache__/package.cpython-36.pyc and /daq/software/ALCF_SBN_spack_recipes/fnal_art/packages/sbndaq-artdaq-core/__pycache__/package.cpython-36.pyc differ
+Binary files old_fnal_art/packages/sbndaq-artdaq-core/__pycache__/package.cpython-39.pyc and /daq/software/ALCF_SBN_spack_recipes/fnal_art/packages/sbndaq-artdaq-core/__pycache__/package.cpython-39.pyc differ
+Binary files old_fnal_art/packages/sbndata/__pycache__/package.cpython-39.pyc and /daq/software/ALCF_SBN_spack_recipes/fnal_art/packages/sbndata/__pycache__/package.cpython-39.pyc differ
+diff -r old_fnal_art/packages/sbndcode/package.py /daq/software/ALCF_SBN_spack_recipes/fnal_art/packages/sbndcode/package.py
+1c1
+< # Copyright 2013-2019 Lawrence Livermore National Security, LLC and other
+---
+> # Copyright2013-2019 Lawrence Livermore National Security, LLC and other
+8a9,10
+> from spack import *
+> from spack.package import *
+37d38
+<     homepage = "https://cdcvs.fnal.gov/redmine/projects/sbncode"
+40c41,50
+<     version("develop", branch="develop", git=git_base, get_full_repo=True)
+---
+>     version("10.06.00.01", sha256="5ad9dfb9e96adf82a9f0a6fcbcb8042664b1349fe4f44374462f17fce2d95b51")
+>     version("10.04.07", tag="v10_04_07", git=git_base, get_full_repo=True)
+>     version("10.04.06.01",tag="v10_04_06_01", git=git_base, get_full_repo=True)
+>     version("09.93.01.02.01", tag="v09_93_01_02p01", git=git_base, get_full_repo=True)
+>     version("09.93.01.02", tag="v09_93_01_02rc0", git=git_base, get_full_repo=True)
+>     version("09.93.01.01", tag="v09_93_01_01", git=git_base, get_full_repo=True)
+>     version("09.93.01", tag="v09_93_01", git=git_base, get_full_repo=True)
+>     version("09.91.02.02", tag="v09_91_02_02", git=git_base, get_full_repo=True)
+>     version("09.91.02.01", tag="v09_91_02_01", git=git_base, get_full_repo=True)
+>     version("09.90.00", tag="v09_90_00", git=git_base, get_full_repo=True)
+44a55
+>     patch("spack.patch")
+45a57,61
+>     patch("v09_90_00.patch", when="@9.90.00")
+>     patch("v09_91_02_02.patch", when="@9.91.02.02")
+>     patch("v09_91_02_01.patch", when="@9.91.02.01")
+>     patch("v09_93_01_01.patch", when="@09.93.01.01")
+>     patch("v09_93_01_02.patch", when="@09.93.01.02")
+55d70
+<     # Build-only dependencies.
+59,70c74,76
+< 
+<     # Build and link dependencies.
+<     depends_on("artdaq-core", type=("build", "run"))
+<     depends_on("art-root-io", type=("build", "run"))
+<     depends_on("art", type=("build", "run"))
+<     depends_on("artdaq-core", type=("build", "run"))
+<     depends_on("boost", type=("build", "run"))
+<     depends_on("canvas-root-io", type=("build", "run"))
+<     depends_on("canvas", type=("build", "run"))
+<     depends_on("cetlib-except", type=("build", "run"))
+<     depends_on("clhep", type=("build", "run"))
+<     depends_on("cppgsl", type=("build", "run"))
+---
+>     depends_on("libjpeg", type="build")
+>     depends_on("libpng", type="build")
+>     depends_on("giflib", type="build")
+72,89d77
+<     depends_on("fftw", type=("build", "run"))
+<     depends_on("hep-concurrency", type=("build", "run"))
+<     depends_on("ifdh-art", type=("build", "run"))
+<     depends_on("tbb", type=("build", "run"))
+<     depends_on("geant4", type=("build", "run"))
+<     depends_on("xerces-c", type=("build", "run"))
+<     depends_on("larana", type=("build", "run"))
+<     depends_on("larcoreobj", type=("build", "run"))
+<     depends_on("larcore", type=("build", "run"))
+<     depends_on("lardataobj", type=("build", "run"))
+<     depends_on("lardata", type=("build", "run"))
+<     depends_on("larevt", type=("build", "run"))
+<     depends_on("pandora", type=("build", "run"))
+<     depends_on("larpandora", type=("build", "run"))
+<     depends_on("larpandoracontent", type=("build", "run"))
+<     depends_on("py-torch", type=("build", "run"))
+<     depends_on("larreco", type=("build", "run"))
+<     depends_on("larsim", type=("build", "run"))
+92,98d79
+<     depends_on("nug4", type=("build", "run"))
+<     depends_on("genie", type=("build", "run"))
+<     depends_on("genie-xsec", type=("build", "run"))
+<     depends_on("ifdhc", type=("build", "run"))
+<     depends_on("libxml2", type=("build", "run"))
+<     # depends_on('nurandom', type=('build','run'))  ???
+<     depends_on("nutools", type=("build", "run"))
+100,103d80
+<     depends_on("range-v3", type=("build", "run"))
+<     depends_on("sbndaq-artdaq-core", type=("build", "run"))
+<     depends_on("sqlite", type=("build", "run"))
+<     depends_on("trace", type=("build", "run"))
+104a82,97
+> 
+>     #depends_on("larg4", type=("build", "run"))
+>     #depends_on("larcorealg", type=("build", "run"))
+>     #depends_on("nuevdb", type=("build", "run"))
+>     depends_on("cry", type=("build", "run"))
+>     depends_on("dk2nugenie", type=("build", "run"))
+>     #depends_on("log4cpp", type=("build", "run"))
+>     depends_on("rstartree", type=("build", "run"))
+>     #depends_on("wirecell", type=("build", "run"))
+>     #depends_on("hdf5", type=("build", "run"))
+>     #depends_on("hep-hpc", type=("build", "run"))
+>     #depends_on("genie-xsec", type=("build", "run"))
+>     #depends_on("nugen", type=("build", "run"))
+>     #depends_on("larsimdnn", type=("build", "run"))
+> 
+>     depends_on("vdt", type=("build", "run"))
+105a99,100
+>     depends_on("sbnd-data", type=("build", "run"))
+>     depends_on("cetmodules", type=("build", "run"))
+111a107,112
+>     def patch(self):
+>         cetmodules_version = self.spec['cetmodules'].version.string
+>         sbndcode_version = self.version.string
+>         filter_file('cetmodules REQUIRED', 'cetmodules '+cetmodules_version+' REQUIRED','CMakeLists.txt')
+>         filter_file('sbndcode LANGUAGES', 'sbndcode VERSION '+sbndcode_version+' LANGUAGES','CMakeLists.txt')
+> 
+113d113
+<         # url = 'https://cdcvs.fnal.gov/cgi-bin/git_archive.cgi/cvs/projects/{0}.v{1}.tbz2'
+119a120
+>             "-DIGNORE_ABSOLUTE_TRANSITIVE_DEPENDENCIES=True",
+121,126c122,126
+<         ]
+<         return args
+< 
+<     @property
+<     def cmake_prefix_paths(self):
+<         return "{0}/lib/python{1}/site-packages/torch".format(
+---
+>             "-Dsbndcode_FW_DIR=fw",
+>             "-Dsbndcode_WP_DIR={0}".format(self.spec["wirecell"].prefix),
+>             "-DCMAKE_PREFIX_PATH={0}".format(
+>                 self.spec["sbnanaobj"].prefix),
+>             "-DCMAKE_PREFIX_PATH={0}/lib/python{1}/site-packages/torch".format(
+128c128,138
+<             )
+---
+>             ),
+>             "-DTensorFlow_INCLUDE_DIR={0}/lib/python{1}/site-packages/tensorflow/include".format(
+>                     self.spec["py-tensorflow"].prefix, "3.9"),
+>             "-DTensorFlow_LIBRARIES={0}/lib/python{1}/site-packages/tensorflow".format(
+>                     self.spec["py-tensorflow"].prefix, "3.9"),
+>             "-DTensorFlow_cc_LIBRARY={0}/lib/python{1}/site-packages/tensorflow/libtensorflow_framework.so".format(
+>                     self.spec["py-tensorflow"].prefix, "3.9"),
+>             "-DTensorFlow_framework_LIBRARY={0}/lib/python{1}/site-packages/tensorflow/libtensorflow_cc.so".format(
+>                     self.spec["py-tensorflow"].prefix, "3.9"),
+>             ]
+>         return args
+132a143
+>         spack_env.set("SBNDCODE_DIR", str(self.build_directory))
+141a153,155
+>         spack_env.prepend_path("GENIE_INC", str(self.spec["genie"].prefix.include))
+>         spack_env.prepend_path("hep_hpc_DIR", str(self.spec["hep-hpc"].prefix))
+>         spack_env.prepend_path("LD_LIBRARY_PATH", "{0}/lib/python{1}/site-packages/tensorflow".format(self.spec["py-tensorflow"].prefix, "3.9"))
+151,154c165,168
+<         for d in self.spec.traverse(
+<             root=False, cover="nodes", order="post", deptype=("link"), direction="children"
+<         ):
+<             run_env.prepend_path("ROOT_INCLUDE_PATH", str(self.spec[d.name].prefix.include))
+---
+>         #for d in self.spec.traverse(
+>         #    root=False, cover="nodes", order="post", deptype=("link"), direction="children"
+>         #):
+>         #    run_env.prepend_path("ROOT_INCLUDE_PATH", str(self.spec[d.name].prefix.include))
+158c172,178
+<         run_env.prepend_path("GENIE_INC", str(self.spec["genie"].prefix.include))
+---
+>         # sbnd_data path       
+>         run_env.prepend_path("FW_SEARCH_PATH", os.path.join(self.spec['sbnd-data'].prefix))
+>         # fcl file prefix
+>         run_env.prepend_path("FHICL_FILE_PATH", self.prefix.fcl)
+>         run_env.prepend_path("FHICL_INCLUDE_PATH", self.prefix.fcl)
+>         # Add to wire-cell path
+>         run_env.prepend_path("WIRECELL_PATH", os.path.join(self.spec['wirecell'].prefix))
+160c180,181
+<         sanitize_environments(run_env)
+---
+>         # sanitize_environments(run_env)
+> 
+172c193
+<         sanitize_environments(spack_env)
+---
+>         sanitize_environments(spack_env) 
+Only in old_fnal_art/packages/sbndcode/__pycache__: package.cpython-36.pyc
+Binary files old_fnal_art/packages/sbndcode/__pycache__/package.cpython-39.pyc and /daq/software/ALCF_SBN_spack_recipes/fnal_art/packages/sbndcode/__pycache__/package.cpython-39.pyc differ
+Only in /daq/software/ALCF_SBN_spack_recipes/fnal_art/packages/sbndcode: spack.patch
+Only in /daq/software/ALCF_SBN_spack_recipes/fnal_art/packages/sbndcode: v09_90_00.patch
+Only in /daq/software/ALCF_SBN_spack_recipes/fnal_art/packages/sbndcode: v09_91_02_01.patch
+Only in /daq/software/ALCF_SBN_spack_recipes/fnal_art/packages/sbndcode: v09_91_02_02.patch
+Only in /daq/software/ALCF_SBN_spack_recipes/fnal_art/packages/sbndcode: v09_93_01_01.patch
+Only in /daq/software/ALCF_SBN_spack_recipes/fnal_art/packages/sbndcode: v09_93_01_02.patch
+Only in /daq/software/ALCF_SBN_spack_recipes/fnal_art/packages/sbndcode: v09_93_01.patch
+Only in /daq/software/ALCF_SBN_spack_recipes/fnal_art/packages: sbnd-data
+Only in /daq/software/ALCF_SBN_spack_recipes/fnal_art/packages: sbn-ml-cafmaker
+diff -r old_fnal_art/packages/sbnobj/package.py /daq/software/ALCF_SBN_spack_recipes/fnal_art/packages/sbnobj/package.py
+8a9
+> from spack import *
+50a52,55
+>     version("10.01.00", sha256="f0df159da2b94dbd77c61f065d18b3124d44b90aee229fa4ca67c9f3aadbff53") # FIXME
+>     version("09.19.05", sha256="2e520d8cf0433790964bbb911e4f7d36cc4b0cc29133c11df838684fdbe195c0")
+>     version("09.19.04", sha256="78b7c15159ec33db8beb5105795ff026a5e251dc0a1bbe4845725e1a02633ba1")
+>     version("09.19.02", sha256="292e37da8f10549d4cdfbfef4743419d974076b4c0333823c9539faa780414bc")
+65a71,74
+>     patch("spack.patch")
+>     patch("v09_19_05.patch", when="@09.19.05")
+>     patch("v09_19_04.patch", when="@09.19.04")
+>     patch("v09_19_02.patch", when="@09.19.02")
+115a125
+>     depends_on("vdt", type=("build", "run"))
+172d181
+<         run_env.prepend_path("FHICL_FILE_PATH", self.prefix.fcl)
+Only in old_fnal_art/packages/sbnobj/__pycache__: package.cpython-36.pyc
+Binary files old_fnal_art/packages/sbnobj/__pycache__/package.cpython-39.pyc and /daq/software/ALCF_SBN_spack_recipes/fnal_art/packages/sbnobj/__pycache__/package.cpython-39.pyc differ
+Only in /daq/software/ALCF_SBN_spack_recipes/fnal_art/packages/sbnobj: spack.patch
+Only in /daq/software/ALCF_SBN_spack_recipes/fnal_art/packages/sbnobj: v09_19_02.patch
+Only in /daq/software/ALCF_SBN_spack_recipes/fnal_art/packages/sbnobj: v09_19_04.patch
+Only in /daq/software/ALCF_SBN_spack_recipes/fnal_art/packages/sbnobj: v09_19_05.patch
+diff -r old_fnal_art/packages/stan/package.py /daq/software/ALCF_SBN_spack_recipes/fnal_art/packages/stan/package.py
+5a6
+> from spack import *
+Only in old_fnal_art/packages/stan/__pycache__: package.cpython-36.pyc
+Binary files old_fnal_art/packages/stan/__pycache__/package.cpython-39.pyc and /daq/software/ALCF_SBN_spack_recipes/fnal_art/packages/stan/__pycache__/package.cpython-39.pyc differ
+diff -r old_fnal_art/packages/stan-math/package.py /daq/software/ALCF_SBN_spack_recipes/fnal_art/packages/stan-math/package.py
+24a25
+> from spack import *
+Only in old_fnal_art/packages/stan-math/__pycache__: package.cpython-36.pyc
+Binary files old_fnal_art/packages/stan-math/__pycache__/package.cpython-39.pyc and /daq/software/ALCF_SBN_spack_recipes/fnal_art/packages/stan-math/__pycache__/package.cpython-39.pyc differ
+diff -r old_fnal_art/packages/systematicstools/package.py /daq/software/ALCF_SBN_spack_recipes/fnal_art/packages/systematicstools/package.py
+22a23
+> from spack import *
+41a43,46
+>     version("01_04_04", sha256="7436341f63ea205d8b901b75859a26ec81f29fd272bf324c7bdcde713a3b937c")
+> 
+>     depends_on("c", type="build")
+>     depends_on("cxx", type="build")
+49,51d53
+<         # FIXME: Add arguments other than
+<         # FIXME: CMAKE_INSTALL_PREFIX and CMAKE_BUILD_TYPE
+<         # FIXME: If not needed delete this function
+Only in old_fnal_art/packages/systematicstools/__pycache__: package.cpython-36.pyc
+Binary files old_fnal_art/packages/systematicstools/__pycache__/package.cpython-39.pyc and /daq/software/ALCF_SBN_spack_recipes/fnal_art/packages/systematicstools/__pycache__/package.cpython-39.pyc differ
+Only in old_fnal_art/packages: tensorflow
+diff -r old_fnal_art/packages/triton/package.py /daq/software/ALCF_SBN_spack_recipes/fnal_art/packages/triton/package.py
+7,8d6
+< import os
+< 
+9a8
+> import os
+19a19
+>     version( "22.08", sha256="9f56056c4af2a08da48756a810c16449678ffb4af11d34c3e139f459f4c70553")
+Only in old_fnal_art/packages/triton/__pycache__: package.cpython-36.pyc
+Binary files old_fnal_art/packages/triton/__pycache__/package.cpython-39.pyc and /daq/software/ALCF_SBN_spack_recipes/fnal_art/packages/triton/__pycache__/package.cpython-39.pyc differ
+Only in old_fnal_art/packages/trtis-clients/__pycache__: package.cpython-36.pyc
+Binary files old_fnal_art/packages/trtis-clients/__pycache__/package.cpython-39.pyc and /daq/software/ALCF_SBN_spack_recipes/fnal_art/packages/trtis-clients/__pycache__/package.cpython-39.pyc differ
+diff -r old_fnal_art/packages/wibtools/package.py /daq/software/ALCF_SBN_spack_recipes/fnal_art/packages/wibtools/package.py
+7d6
+< import spack.util.web
+Binary files old_fnal_art/packages/wibtools/__pycache__/package.cpython-36.pyc and /daq/software/ALCF_SBN_spack_recipes/fnal_art/packages/wibtools/__pycache__/package.cpython-36.pyc differ
+Binary files old_fnal_art/packages/wibtools/__pycache__/package.cpython-39.pyc and /daq/software/ALCF_SBN_spack_recipes/fnal_art/packages/wibtools/__pycache__/package.cpython-39.pyc differ
+Only in old_fnal_art/packages: wirecell
+Only in /daq/software/ALCF_SBN_spack_recipes/fnal_art/packages: xerces-c
